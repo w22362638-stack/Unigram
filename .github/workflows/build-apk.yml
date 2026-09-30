@@ -62,12 +62,16 @@ jobs:
             --build-cache \
             --no-daemon
 
+      - name: Find APK files
+        shell: bash
+        run: |
+          echo "=== APK FILES ==="
+          find . -type f -name "*.apk" -print
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Unigram-release
           path: |
-            **/build/outputs/apk/**/*.apk
-            **/build/outputs/apk/*.apk
-            **/build/outputs/**/*.apk
-            **/outputs/**/*.apk
+            **/*.apk
+          if-no-files-found: error
