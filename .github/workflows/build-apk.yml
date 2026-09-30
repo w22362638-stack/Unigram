@@ -69,3 +69,5 @@ jobs:
           path: |
             **/build/outputs/apk/**/*.apk
             **/build/outputs/apk/*.apk
+            **/build/outputs/**/*.apk
+            **/outputs/**/*.apk
