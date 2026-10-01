@@ -51,48 +51,75 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Build APK
-        run: |
-          chmod +x ./gradlew
-
-          # Realme 8 / Helio G95: ARM64 فقط
-          ./gradlew TMessagesProj_App:packageBundleAfatReleaseUniversalApk \
-            -PABI_FILTERS=arm64-v8a \
-            -Pandroid.injected.build.abi=arm64-v8a \
-            --build-cache \
-            --no-daemon
-
-      - name: Build direct installable APK
-        run: |
-          ./gradlew :TMessagesProj_App:assembleAfatRelease --no-daemon --build-cache
-
-      - name: Prepare installable APK
+      - name: Build complete APKs
         shell: bash
         run: |
           set -e
-          rm -rf release
-          mkdir -p release
+          chmod +x ./gradlew
+
+          ./gradlew --version
+
+          ./gradlew --parallel \
+            :TMessagesProj_App:bundleBundleAfat_SDK23Release \
+            :TMessagesProj_App:bundleBundleAfatRelease \
+            :TMessagesProj_App:assembleAfatRelease \
+            --stacktrace \
+            --no-daemon
+
+      - name: Verify complete installable APK
+        shell: bash
+        run: |
+          set -e
 
           APK="TMessagesProj_App/build/outputs/apk/afat/release/app.apk"
 
-          echo "=== APKs generated ==="
-          find TMessagesProj_App/build/outputs/apk -type f -name "*.apk" -print
+          echo "=== ALL APK OUTPUTS ==="
+          find TMessagesProj_App/build/outputs/apk -type f -name "*.apk" -exec ls -lh {} \;
+
+          echo "=== ALL BUNDLE OUTPUTS ==="
+          find TMessagesProj_App/build/outputs/bundle -type f -print | head -100 || true
 
           if [ ! -f "$APK" ]; then
-            echo "Direct APK not found: $APK"
+            echo "ERROR: complete APK does not exist:"
+            echo "$APK"
             exit 1
           fi
 
-          cp "$APK" release/Unigram.apk
+          echo "=== APK ZIP TEST ==="
+          unzip -t "$APK" >/dev/null
 
-          echo "=== Final APK ==="
+          echo "=== APK SIGNATURE ==="
+          APKSIGNER=$(find "$ANDROID_HOME/build-tools" -type f -name apksigner | sort -V | tail -n 1)
+          "$APKSIGNER" verify --verbose "$APK"
+
+          echo "=== APK PACKAGE ==="
+          AAPT=$(find "$ANDROID_HOME/build-tools" -type f -name aapt | sort -V | tail -n 1)
+          "$AAPT" dump badging "$APK" | head -20
+
+          echo "=== NATIVE LIBRARIES ==="
+          unzip -l "$APK" | grep 'lib/.*/.*\.so' | head -100
+
+          echo "=== REQUIRED ABIs ==="
+          for ABI in armeabi-v7a arm64-v8a x86 x86_64; do
+            if unzip -l "$APK" | grep -q "lib/$ABI/"; then
+              echo "OK: $ABI"
+            else
+              echo "MISSING: $ABI"
+              exit 1
+            fi
+          done
+
+          echo "=== FINAL APK ==="
+          mkdir -p release
+          cp "$APK" release/Unigram.apk
+          sha256sum release/Unigram.apk
           ls -lh release/Unigram.apk
 
           SIZE=$(stat -c%s release/Unigram.apk)
           test "$SIZE" -gt 1000000
 
-          echo "APK is ready."
-          
+          echo "COMPLETE INSTALLABLE APK VERIFIED."
+
       - name: Upload installable APK
         uses: actions/upload-artifact@v4
         with:
