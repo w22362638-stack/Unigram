@@ -56,7 +56,7 @@ jobs:
           chmod +x ./gradlew
 
           # Realme 8 / Helio G95: ARM64 فقط
-          ./gradlew assembleRelease \
+          ./gradlew TMessagesProj_App:packageBundleAfatReleaseUniversalApk \
             -PABI_FILTERS=arm64-v8a \
             -Pandroid.injected.build.abi=arm64-v8a \
             --build-cache \
