@@ -62,21 +62,40 @@ jobs:
             --build-cache \
             --no-daemon
 
-      - name: Prepare single APK
+      - name: Find and prepare real APK
         shell: bash
         run: |
           set -e
+          rm -rf release
           mkdir -p release
-          APK=$(find . -type f -name "*.apk" -not -path "./release/*" | head -n 1)
-          test -n "$APK"
-          cp "$APK" release/Telegram.apk
-          echo "APK: $APK"
-          ls -lh release/Telegram.apk
 
-      - name: Upload single APK
+          echo "=== ALL APK FILES ==="
+          find . -type f -name "*.apk" -not -path "./release/*" -print
+
+          APK=$(find . -type f -name "*.apk" \
+            -not -path "./release/*" \
+            -size +1M \
+            | grep -Ei 'universal|release' \
+            | head -n 1)
+
+          if [ -z "$APK" ]; then
+            echo "ERROR: No valid APK found"
+            exit 1
+          fi
+
+          cp "$APK" release/Unigram.apk
+
+          SIZE=$(stat -c%s release/Unigram.apk)
+          echo "Selected APK: $APK"
+          echo "Final APK size: $SIZE bytes"
+
+          test "$SIZE" -gt 1000000
+          file release/Unigram.apk
+
+      - name: Upload real APK
         uses: actions/upload-artifact@v4
         with:
-          name: Telegram-APK
-          path: release/Telegram.apk
+          name: Unigram-APK
+          path: release/Unigram.apk
           if-no-files-found: error
           retention-days: 7
