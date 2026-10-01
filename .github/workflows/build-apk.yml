@@ -66,6 +66,19 @@ jobs:
             --stacktrace \
             --no-daemon
 
+      - name: Verify Unigram package identity
+        shell: bash
+        run: |
+          set -e
+          APK="TMessagesProj_App/build/outputs/apk/afat/release/app.apk"
+          AAPT=$(find "$ANDROID_HOME/build-tools" -type f -name aapt | sort -V | tail -n 1)
+
+          echo "=== PACKAGE ID / APP NAME ==="
+          "$AAPT" dump badging "$APK" | grep -E "package:|application-label:" | head -5
+
+          "$AAPT" dump badging "$APK" | grep -q "name='org.unigram.messenger'"
+          "$AAPT" dump badging "$APK" | grep -q "application-label:'Unigram'"
+
       - name: Verify complete installable APK
         shell: bash
         run: |
