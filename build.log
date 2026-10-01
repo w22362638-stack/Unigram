@@ -26,299 +26,1090 @@ or from Android Studio, click: `Refactor` > `Migrate BuildConfig to Gradle Build
 --I- Using the AGConnect-Config file: /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj_AppHuawei/agconnect-services.json
 --W- The variant: afatRelease, Use the json file: /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj_AppHuawei/agconnect-services.json
 
-> Task :jlatexmath:preBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-database:preBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:preBuild UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-datasource:preBuild UP-TO-DATE
-> Task :jlatexmath:preReleaseBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-database:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:preReleaseBuild UP-TO-DATE
+> Task :jlatexmath:preBuild UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-common:preBuild UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-decoder:preBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-common:preReleaseBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:preReleaseBuild UP-TO-DATE
 > Task :TMessagesProj_App:preBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-database:preReleaseBuild UP-TO-DATE
-> Task :TMessagesProj_App:preBundleAfatReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_App:preAfatReleaseBuild UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-decoder:preReleaseBuild UP-TO-DATE
-> Task :TMessagesProj_App:extractBundleAfatReleaseVersionControlInfo UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:preBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:preReleaseBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:prepareReleaseArtProfile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-database:prepareReleaseArtProfile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:preBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:prepareReleaseArtProfile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:preBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:preReleaseBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-common:prepareReleaseArtProfile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:prepareReleaseArtProfile UP-TO-DATE
-> Task :jlatexmath:prepareReleaseArtProfile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:prepareReleaseArtProfile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:preBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:preBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:preReleaseBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:preReleaseBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:preReleaseBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-session:preBuild UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:prepareReleaseArtProfile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-session:preReleaseBuild UP-TO-DATE
-> Task :jlatexmath:generateReleaseBuildConfig UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-database:preReleaseBuild UP-TO-DATE
+> Task :jlatexmath:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:mergeReleaseJniLibFolders UP-TO-DATE
 > Task :TMessagesProj:checkVisibility
 > Task :TMessagesProj:preBuild
+> Task :TMessagesProj:preStandaloneBuild
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-common:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-database:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :jlatexmath:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-database:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:preBuild UP-TO-DATE
+> Task :jlatexmath:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :jlatexmath:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-database:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-session:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-session:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :jlatexmath:prepareReleaseArtProfile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-session:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-session:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:prepareReleaseArtProfile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-session:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-container:prepareReleaseArtProfile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-database:prepareReleaseArtProfile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:prepareReleaseArtProfile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:prepareReleaseArtProfile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:copyReleaseJniLibsProjectOnly UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-exoplayer:prepareReleaseArtProfile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:prepareReleaseArtProfile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:prepareReleaseArtProfile UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:prepareReleaseArtProfile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseBuildConfig UP-TO-DATE
+> Task :jlatexmath:generateReleaseBuildConfig UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseResValues UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseBuildConfig UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseBuildConfig UP-TO-DATE
 > Task :jlatexmath:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseBuildConfig UP-TO-DATE
-> Task :TMessagesProj:preReleaseBuild
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:prepareReleaseArtProfile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseBuildConfig UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseBuildConfig UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseResValues UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj:prepareReleaseArtProfile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseBuildConfig UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-session:prepareReleaseArtProfile UP-TO-DATE
+> Task :jlatexmath:generateReleaseResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseResValues UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseResources UP-TO-DATE
-> Task :jlatexmath:generateReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj:generateReleaseBuildConfig UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:packageReleaseResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-database:packageReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:packageReleaseResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:processReleaseNavigationResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-common:packageReleaseResources UP-TO-DATE
-> Task :jlatexmath:packageReleaseResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-database:processReleaseNavigationResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-common:processReleaseNavigationResources UP-TO-DATE
-> Task :jlatexmath:processReleaseNavigationResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:processReleaseNavigationResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:packageReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:processReleaseNavigationResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:packageReleaseResources UP-TO-DATE
-> Task :jlatexmath:parseReleaseLocalResources UP-TO-DATE
-> Task :TMessagesProj:generateReleaseLocalizationUtilsJava UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:processReleaseNavigationResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-common:parseReleaseLocalResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-container:parseReleaseLocalResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:parseReleaseLocalResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-database:parseReleaseLocalResources UP-TO-DATE
-> Task :TMessagesProj:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:parseReleaseLocalResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:parseReleaseLocalResources UP-TO-DATE
-> Task :jlatexmath:generateReleaseRFile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseRFile UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseRFile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:javaPreCompileRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-common:javaPreCompileRelease UP-TO-DATE
-> Task :jlatexmath:javaPreCompileRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:generateReleaseBuildConfig UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseRFile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:generateReleaseResValues UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseRFile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:javaPreCompileRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:generateReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:generateReleaseBuildConfig UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseRFile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:javaPreCompileRelease UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:javaPreCompileRelease UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-database:javaPreCompileRelease UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseBuildConfig UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseBuildConfig UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseResValues UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseResValues UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:packageReleaseResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:processReleaseNavigationResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:parseReleaseLocalResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseRFile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:javaPreCompileRelease UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:generateReleaseBuildConfig UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-exoplayer:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseBuildConfig UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:packageReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:packageReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:processReleaseNavigationResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-exoplayer:generateReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:processReleaseNavigationResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:parseReleaseLocalResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:parseReleaseLocalResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseRFile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:javaPreCompileRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseBuildConfig UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:generateReleaseRFile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:packageReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:javaPreCompileRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:generateReleaseBuildConfig UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:processReleaseNavigationResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:generateReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:parseReleaseLocalResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:packageReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseRFile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:processReleaseNavigationResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:javaPreCompileRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:parseReleaseLocalResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:generateReleaseRFile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:javaPreCompileRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-database:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:extractDeepLinksRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:processReleaseManifest UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-database:extractDeepLinksRelease UP-TO-DATE
-> Task :TMessagesProj:generateReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseRFile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:javaPreCompileRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:extractDeepLinksRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-database:processReleaseManifest UP-TO-DATE
-> Task :TMessagesProj:processReleaseGoogleServices UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:processReleaseManifest UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-exoplayer:packageReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:extractDeepLinksRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:extractDeepLinksRelease UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-exoplayer:processReleaseNavigationResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-exoplayer:parseReleaseLocalResources UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-exoplayer:generateReleaseRFile UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-exoplayer:javaPreCompileRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:extractDeepLinksRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:processReleaseManifest UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:extractDeepLinksRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:processReleaseManifest UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:extractDeepLinksRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:processReleaseManifest UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:extractDeepLinksRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:processReleaseManifest UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:processReleaseJavaRes NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-database:processReleaseJavaRes NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:processReleaseJavaRes NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:processReleaseJavaRes NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:processReleaseJavaRes NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:processReleaseJavaRes NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-extractor:processReleaseJavaRes NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:processReleaseManifest UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:processReleaseManifest UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:processReleaseJavaRes NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:processReleaseJavaRes NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-database:mergeReleaseShaders
-> Task :TMessagesProj_Modules:media3:media-lib-database:compileReleaseShaders NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseAssets UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:mergeReleaseShaders
-> Task :TMessagesProj_Modules:media3:media-lib-container:compileReleaseShaders NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseAssets UP-TO-DATE
-> Task :TMessagesProj:packageReleaseResources UP-TO-DATE
-> Task :TMessagesProj:processReleaseNavigationResources UP-TO-DATE
-> Task :TMessagesProj:parseReleaseLocalResources UP-TO-DATE
-> Task :TMessagesProj:generateReleaseRFile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-container:mergeReleaseAssets
-> Task :TMessagesProj:javaPreCompileRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-database:mergeReleaseAssets
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:mergeReleaseShaders
-> Task :TMessagesProj:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:compileReleaseShaders NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseAssets UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:mergeReleaseShaders
-> Task :TMessagesProj:extractDeepLinksRelease
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:compileReleaseShaders NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:generateReleaseAssets UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:mergeReleaseShaders
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:compileReleaseShaders NO-SOURCE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseAssets UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-datasource:mergeReleaseAssets
-> Task :TMessagesProj:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseBuildConfig UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseResValues UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:packageReleaseResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:processReleaseNavigationResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:parseReleaseLocalResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseRFile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:javaPreCompileRelease UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-common:compileReleaseJavaWithJavac UP-TO-DATE
-> Task :jlatexmath:compileReleaseJavaWithJavac UP-TO-DATE
-> Task :jlatexmath:bundleLibCompileToJarRelease UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseBuildConfig UP-TO-DATE
 > Task :TMessagesProj_Modules:media3:media-lib-common:bundleLibCompileToJarRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:mergeReleaseAssets
-> Task :TMessagesProj:mergeReleaseShaders
-> Task :jlatexmath:mergeReleaseGeneratedProguardFiles UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-session:generateReleaseBuildConfig UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-session:generateReleaseResValues UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-session:generateReleaseResources UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:mergeReleaseAssets
-> Task :jlatexmath:exportReleaseConsumerProguardFiles UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-common:mergeReleaseGeneratedProguardFiles UP-TO-DATE
-> Task :TMessagesProj_App:mergeBundleAfatReleaseArtProfile UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-common:exportReleaseConsumerProguardFiles UP-TO-DATE
-> Task :jlatexmath:bundleLibRuntimeToJarRelease UP-TO-DATE
-> Task :jlatexmath:writeReleaseAarMetadata UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-common:writeReleaseAarMetadata UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseResValues UP-TO-DATE
 
-> Task :TMessagesProj_Modules:media3:media-lib-session:compileReleaseAidl FAILED
-error: "/data/data/com.termux/files/home/lib/android-sdk-9123335/build-tools/35.0.0/aidl" is for EM_X86_64 (62) instead of EM_AARCH64 (183)
+> Task :TMessagesProj:configureCMakeRelWithDebInfo[arm64-v8a] FAILED
+C/C++: CMake Warning (dev) in CMakeLists.txt:
+C/C++:   No project() command is present.  The top-level CMakeLists.txt file must
+C/C++:   contain a literal, direct call to the project() command.  Add a line of
+C/C++:   code such as
+C/C++:     project(ProjectName)
+C/C++:   near the top of the file, but after cmake_minimum_required().
+C/C++:   CMake is pretending there is a "project(Project)" command on the first
+C/C++:   line.
+C/C++: This warning is for project developers.  Use -Wno-dev to suppress it.
+C/C++: CMake Warning (dev) in CMakeLists.txt:
+C/C++:   cmake_minimum_required() should be called prior to this top-level project()
+C/C++:   call.  Please see the cmake-commands(7) manual for usage documentation of
+C/C++:   both commands.
+C/C++: This warning is for project developers.  Use -Wno-dev to suppress it.
+C/C++: CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+C/C++:   Compatibility with CMake < 3.10 will be removed from a future version of
+C/C++:   CMake.
+C/C++:   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+C/C++:   to tell CMake that the project requires at least <min> but has been updated
+C/C++:   to work with policies introduced by <max> or earlier.
+C/C++: Call Stack (most recent call first):
+C/C++:   /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:146 (include)
+C/C++:   CMakeLists.txt
+C/C++: CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+C/C++:   Compatibility with CMake < 3.10 will be removed from a future version of
+C/C++:   CMake.
+C/C++:   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+C/C++:   to tell CMake that the project requires at least <min> but has been updated
+C/C++:   to work with policies introduced by <max> or earlier.
+C/C++: Call Stack (most recent call first):
+C/C++:   /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:55 (include)
+C/C++:   /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:146 (include)
+C/C++:   CMakeLists.txt
+C/C++: CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+C/C++:   Compatibility with CMake < 3.10 will be removed from a future version of
+C/C++:   CMake.
+C/C++:   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+C/C++:   to tell CMake that the project requires at least <min> but has been updated
+C/C++:   to work with policies introduced by <max> or earlier.
+C/C++: Call Stack (most recent call first):
+C/C++:   /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a/CMakeFiles/4.3.4/CMakeSystem.cmake:6 (include)
+C/C++:   CMakeLists.txt
+C/C++: CMake Error in CMakeLists.txt:
+C/C++:   The CMAKE_C_COMPILER:
+C/C++:     /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/toolchains/llvm/prebuilt/bin/clang
+C/C++:   is not a full path to an existing compiler tool.
+C/C++:   Tell CMake where to find the compiler by setting either the environment
+C/C++:   variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+C/C++:   the compiler, or to the compiler name if it is in the PATH.
+C/C++: CMake Error in CMakeLists.txt:
+C/C++:   The CMAKE_CXX_COMPILER:
+C/C++:     /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/toolchains/llvm/prebuilt/bin/clang++
+C/C++:   is not a full path to an existing compiler tool.
+C/C++:   Tell CMake where to find the compiler by setting either the environment
+C/C++:   variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
+C/C++:   to the compiler, or to the compiler name if it is in the PATH.
 
-
-> Task :jlatexmath:extractDeepLinksRelease UP-TO-DATE
-> Task :TMessagesProj_Modules:media3:media-lib-session:packageReleaseResources UP-TO-DATE
-
-> Task :TMessagesProj_Modules:media3:media-lib-database:compileReleaseJavaWithJavac
-Java compiler version 21 has deprecated support for compiling with source/target version 8.
-Try one of the following options:
-    1. [Recommended] Use Java toolchain with a lower language version
-    2. Set a higher source/target version
-    3. Use a lower version of the JDK running the build (if you're not using Java toolchain)
-For more details on how to configure these settings, see https://developer.android.com/build/jdks.
-To suppress this warning, set android.javaCompile.suppressSourceTargetDeprecationWarning=true in gradle.properties.
-
-> Task :TMessagesProj:processReleaseManifest
-/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/src/main/AndroidManifest.xml:83:5-102 Warning:
-	uses-permission#android.permission.WRITE_EXTERNAL_STORAGE was tagged at AndroidManifest.xml:83 to replace another declaration but no other declaration present
-/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/src/main/AndroidManifest.xml:97:5-701:19 Warning:
-	application@android:supportsRtl was tagged at AndroidManifest.xml:97 to replace other declarations but no other declaration present
-
-> Task :TMessagesProj_Modules:media3:media-lib-container:compileReleaseJavaWithJavac
-Java compiler version 21 has deprecated support for compiling with source/target version 8.
-Try one of the following options:
-    1. [Recommended] Use Java toolchain with a lower language version
-    2. Set a higher source/target version
-    3. Use a lower version of the JDK running the build (if you're not using Java toolchain)
-For more details on how to configure these settings, see https://developer.android.com/build/jdks.
-To suppress this warning, set android.javaCompile.suppressSourceTargetDeprecationWarning=true in gradle.properties.
-warning: [options] source value 8 is obsolete and will be removed in a future release
-warning: [options] target value 8 is obsolete and will be removed in a future release
-warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
-warning: unknown enum constant MigrationStatus.STRICT
-  reason: class file for kotlin.annotations.jvm.MigrationStatus not found
-
-> Task :TMessagesProj_Modules:media3:media-lib-database:compileReleaseJavaWithJavac
-warning: [options] source value 8 is obsolete and will be removed in a future release
-warning: [options] target value 8 is obsolete and will be removed in a future release
-warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
-3 warnings
-
-> Task :TMessagesProj_Modules:media3:media-lib-decoder:compileReleaseJavaWithJavac
-Java compiler version 21 has deprecated support for compiling with source/target version 8.
-Try one of the following options:
-    1. [Recommended] Use Java toolchain with a lower language version
-    2. Set a higher source/target version
-    3. Use a lower version of the JDK running the build (if you're not using Java toolchain)
-For more details on how to configure these settings, see https://developer.android.com/build/jdks.
-To suppress this warning, set android.javaCompile.suppressSourceTargetDeprecationWarning=true in gradle.properties.
-warning: [options] source value 8 is obsolete and will be removed in a future release
-warning: [options] target value 8 is obsolete and will be removed in a future release
-warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
-warning: unknown enum constant MigrationStatus.STRICT
-  reason: class file for kotlin.annotations.jvm.MigrationStatus not found
-4 warnings
-
-> Task :TMessagesProj_Modules:media3:media-lib-container:compileReleaseJavaWithJavac
-4 warnings
-
-> Task :TMessagesProj_App:expandBundleAfatReleaseL8ArtProfileWildcards
+> Task :TMessagesProj_Modules:media3:media-lib-database:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:prepareReleaseArtProfile UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-session:prepareReleaseArtProfile UP-TO-DATE
+> Task :jlatexmath:packageReleaseResources UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:packageReleaseResources UP-TO-DATE
+> Task :TMessagesProj_App:mergeAfatReleaseJniLibFolders UP-TO-DATE
 
 [Incubating] Problems report is available at: file:///data/data/com.termux/files/home/telegram-project/Telegram-Android-master/build/reports/problems/problems-report.html
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-Execution failed for task ':TMessagesProj_Modules:media3:media-lib-session:compileReleaseAidl'.
-> A failure occurred while executing com.android.build.gradle.tasks.AidlCompile$AidlCompileRunnable
-   > com.android.ide.common.process.ProcessException: Error while executing process /data/data/com.termux/files/home/lib/android-sdk-9123335/build-tools/35.0.0/aidl with arguments {-p/data/data/com.termux/files/home/lib/android-sdk-9123335/platforms/android-35/framework.aidl -o/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj_Modules/media/libraries/session/build/generated/aidl_source_output_dir/release/out -I/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj_Modules/media/libraries/session/src/main/aidl -I/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj_Modules/media/libraries/session/src/release/aidl -I/data/data/com.termux/files/home/.gradle/caches/8.13/transforms/940ab160a3f9de54cdae230aca3d961e/transformed/media-1.7.0/aidl -I/data/data/com.termux/files/home/.gradle/caches/8.13/transforms/dd1a132bb9fa86a5f8c067507eb1316c/transformed/core-1.9.0/aidl -I/data/data/com.termux/files/home/.gradle/caches/8.13/transforms/333b5aca43a83c2f54f4ac78da70cfff/transformed/versionedparcelable-1.1.1/aidl -d/data/data/com.termux/files/usr/tmp/aidl15154744420051414777.d /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj_Modules/media/libraries/session/src/main/aidl/androidx/media3/session/IMediaController.aidl}
+Execution failed for task ':TMessagesProj:configureCMakeRelWithDebInfo[arm64-v8a]'.
+> [CXX1429] error when building with cmake using /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/jni/CMakeLists.txt: -- The C compiler identification is unknown
+  -- The CXX compiler identification is unknown
+  -- Configuring incomplete, errors occurred!
+  
+  C++ build system [configure] failed while executing:
+      /data/data/com.termux/files/usr/bin/cmake \
+        -H/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/jni \
+        -DCMAKE_SYSTEM_NAME=Android \
+        -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+        -DCMAKE_SYSTEM_VERSION=21 \
+        -DANDROID_ABI=arm64-v8a \
+        -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a \
+        -DANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 \
+        -DCMAKE_ANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 \
+        -DCMAKE_TOOLCHAIN_FILE=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake \
+        -DCMAKE_MAKE_PROGRAM=/data/data/com.termux/files/usr/bin/ninja \
+        -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a \
+        -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a \
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -B/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a \
+        -GNinja \
+        -DANDROID_STL=c++_static \
+        -DANDROID_PLATFORM=android-21
+    from /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj
+  CMake Warning (dev) in CMakeLists.txt:
+    No project() command is present.  The top-level CMakeLists.txt file must
+    contain a literal, direct call to the project() command.  Add a line of
+    code such as
+  
+      project(ProjectName)
+  
+    near the top of the file, but after cmake_minimum_required().
+  
+    CMake is pretending there is a "project(Project)" command on the first
+    line.
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+  
+  CMake Warning (dev) in CMakeLists.txt:
+    cmake_minimum_required() should be called prior to this top-level project()
+    call.  Please see the cmake-commands(7) manual for usage documentation of
+    both commands.
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+  
+  CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+    Compatibility with CMake < 3.10 will be removed from a future version of
+    CMake.
+  
+    Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+    to tell CMake that the project requires at least <min> but has been updated
+    to work with policies introduced by <max> or earlier.
+  Call Stack (most recent call first):
+    /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:146 (include)
+    CMakeLists.txt
+  
+  
+  CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+    Compatibility with CMake < 3.10 will be removed from a future version of
+    CMake.
+  
+    Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+    to tell CMake that the project requires at least <min> but has been updated
+    to work with policies introduced by <max> or earlier.
+  Call Stack (most recent call first):
+    /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:55 (include)
+    /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:146 (include)
+    CMakeLists.txt
+  
+  
+  CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+    Compatibility with CMake < 3.10 will be removed from a future version of
+    CMake.
+  
+    Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+    to tell CMake that the project requires at least <min> but has been updated
+    to work with policies introduced by <max> or earlier.
+  Call Stack (most recent call first):
+    /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a/CMakeFiles/4.3.4/CMakeSystem.cmake:6 (include)
+    CMakeLists.txt
+  
+  
+  CMake Error in CMakeLists.txt:
+    The CMAKE_C_COMPILER:
+  
+      /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/toolchains/llvm/prebuilt/bin/clang
+  
+    is not a full path to an existing compiler tool.
+  
+    Tell CMake where to find the compiler by setting either the environment
+    variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+    the compiler, or to the compiler name if it is in the PATH.
+  
+  
+  CMake Error in CMakeLists.txt:
+    The CMAKE_CXX_COMPILER:
+  
+      /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/toolchains/llvm/prebuilt/bin/clang++
+  
+    is not a full path to an existing compiler tool.
+  
+    Tell CMake where to find the compiler by setting either the environment
+    variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
+    to the compiler, or to the compiler name if it is in the PATH. : com.android.ide.common.process.ProcessException: -- The C compiler identification is unknown
+  -- The CXX compiler identification is unknown
+  -- Configuring incomplete, errors occurred!
+  
+  C++ build system [configure] failed while executing:
+      /data/data/com.termux/files/usr/bin/cmake \
+        -H/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/jni \
+        -DCMAKE_SYSTEM_NAME=Android \
+        -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+        -DCMAKE_SYSTEM_VERSION=21 \
+        -DANDROID_ABI=arm64-v8a \
+        -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a \
+        -DANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 \
+        -DCMAKE_ANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 \
+        -DCMAKE_TOOLCHAIN_FILE=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake \
+        -DCMAKE_MAKE_PROGRAM=/data/data/com.termux/files/usr/bin/ninja \
+        -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a \
+        -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a \
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -B/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a \
+        -GNinja \
+        -DANDROID_STL=c++_static \
+        -DANDROID_PLATFORM=android-21
+    from /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj
+  CMake Warning (dev) in CMakeLists.txt:
+    No project() command is present.  The top-level CMakeLists.txt file must
+    contain a literal, direct call to the project() command.  Add a line of
+    code such as
+  
+      project(ProjectName)
+  
+    near the top of the file, but after cmake_minimum_required().
+  
+    CMake is pretending there is a "project(Project)" command on the first
+    line.
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+  
+  CMake Warning (dev) in CMakeLists.txt:
+    cmake_minimum_required() should be called prior to this top-level project()
+    call.  Please see the cmake-commands(7) manual for usage documentation of
+    both commands.
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+  
+  CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+    Compatibility with CMake < 3.10 will be removed from a future version of
+    CMake.
+  
+    Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+    to tell CMake that the project requires at least <min> but has been updated
+    to work with policies introduced by <max> or earlier.
+  Call Stack (most recent call first):
+    /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:146 (include)
+    CMakeLists.txt
+  
+  
+  CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+    Compatibility with CMake < 3.10 will be removed from a future version of
+    CMake.
+  
+    Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+    to tell CMake that the project requires at least <min> but has been updated
+    to work with policies introduced by <max> or earlier.
+  Call Stack (most recent call first):
+    /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:55 (include)
+    /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:146 (include)
+    CMakeLists.txt
+  
+  
+  CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+    Compatibility with CMake < 3.10 will be removed from a future version of
+    CMake.
+  
+    Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+    to tell CMake that the project requires at least <min> but has been updated
+    to work with policies introduced by <max> or earlier.
+  Call Stack (most recent call first):
+    /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a/CMakeFiles/4.3.4/CMakeSystem.cmake:6 (include)
+    CMakeLists.txt
+  
+  
+  CMake Error in CMakeLists.txt:
+    The CMAKE_C_COMPILER:
+  
+      /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/toolchains/llvm/prebuilt/bin/clang
+  
+    is not a full path to an existing compiler tool.
+  
+    Tell CMake where to find the compiler by setting either the environment
+    variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+    the compiler, or to the compiler name if it is in the PATH.
+  
+  
+  CMake Error in CMakeLists.txt:
+    The CMAKE_CXX_COMPILER:
+  
+      /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/toolchains/llvm/prebuilt/bin/clang++
+  
+    is not a full path to an existing compiler tool.
+  
+    Tell CMake where to find the compiler by setting either the environment
+    variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
+    to the compiler, or to the compiler name if it is in the PATH.
+  	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.execute(ExecuteProcess.kt:288)
+  	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt$executeProcess$1.invoke(ExecuteProcess.kt:108)
+  	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt$executeProcess$1.invoke(ExecuteProcess.kt:106)
+  	at com.android.build.gradle.internal.cxx.timing.TimingEnvironmentKt.time(TimingEnvironment.kt:32)
+  	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.executeProcess(ExecuteProcess.kt:106)
+  	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.executeProcess$default(ExecuteProcess.kt:85)
+  	at com.android.build.gradle.tasks.CmakeQueryMetadataGenerator.executeProcess(CmakeFileApiMetadataGenerator.kt:59)
+  	at com.android.build.gradle.tasks.ExternalNativeJsonGenerator$configureOneAbi$1$1$3.invoke(ExternalNativeJsonGenerator.kt:247)
+  	at com.android.build.gradle.tasks.ExternalNativeJsonGenerator$configureOneAbi$1$1$3.invoke(ExternalNativeJsonGenerator.kt:247)
+  	at com.android.build.gradle.internal.cxx.timing.TimingEnvironmentKt.time(TimingEnvironment.kt:32)
+  	at com.android.build.gradle.tasks.ExternalNativeJsonGenerator.configureOneAbi(ExternalNativeJsonGenerator.kt:247)
+  	at com.android.build.gradle.tasks.ExternalNativeJsonGenerator.configure(ExternalNativeJsonGenerator.kt:113)
+  	at com.android.build.gradle.tasks.ExternalNativeBuildJsonTask.doTaskAction(ExternalNativeBuildJsonTask.kt:89)
+  	at com.android.build.gradle.internal.tasks.UnsafeOutputsTask$taskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:78)
+  	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
+  	at com.android.build.gradle.internal.tasks.UnsafeOutputsTask.taskAction(UnsafeOutputsTask.kt:81)
+  	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+  	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+  	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+  	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
+  	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+  	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+  	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:244)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)
+  	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:229)
+  	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:212)
+  	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:195)
+  	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:162)
+  	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+  	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+  	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+  	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+  	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+  	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+  	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+  	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+  	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+  	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:50)
+  	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:28)
+  	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
+  	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
+  	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:61)
+  	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:26)
+  	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+  	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
+  	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
+  	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
+  	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
+  	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:75)
+  	at org.gradle.internal.Either$Right.fold(Either.java:175)
+  	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+  	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:73)
+  	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:48)
+  	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:46)
+  	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:35)
+  	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
+  	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
+  	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+  	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
+  	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
+  	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+  	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+  	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:49)
+  	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:27)
+  	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:71)
+  	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:39)
+  	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
+  	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
+  	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:107)
+  	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:56)
+  	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:64)
+  	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:43)
+  	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.executeWithNonEmptySources(AbstractSkipEmptyWorkStep.java:125)
+  	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:56)
+  	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:36)
+  	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+  	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+  	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+  	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:75)
+  	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:41)
+  	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$execute$0(AssignMutableWorkspaceStep.java:35)
+  	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:289)
+  	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:31)
+  	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:22)
+  	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
+  	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+  	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+  	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+  	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
+  	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
+  	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+  	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+  	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:48)
+  	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:35)
+  	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:61)
+  	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:127)
+  	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+  	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:40)
+  	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+  	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+  	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+  	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+  	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+  	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+  	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+  	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+  	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+  	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+  	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+  	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+  	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+  	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+  	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+  	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+  	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+  	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+  	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+  	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+  	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+  	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+  	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+  	at java.base/java.lang.Thread.run(Thread.java:1583)
+  Caused by: com.android.ide.common.process.ProcessException: Error while executing process /data/data/com.termux/files/usr/bin/cmake with arguments {-H/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/jni -DCMAKE_SYSTEM_NAME=Android -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_SYSTEM_VERSION=21 -DANDROID_ABI=arm64-v8a -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a -DANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 -DCMAKE_ANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 -DCMAKE_TOOLCHAIN_FILE=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake -DCMAKE_MAKE_PROGRAM=/data/data/com.termux/files/usr/bin/ninja -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a -DCMAKE_BUILD_TYPE=RelWithDebInfo -B/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a -GNinja -DANDROID_STL=c++_static -DANDROID_PLATFORM=android-21}
+  	at com.android.build.gradle.internal.process.GradleProcessResult.buildProcessException(GradleProcessResult.java:73)
+  	at com.android.build.gradle.internal.process.GradleProcessResult.assertNormalExitValue(GradleProcessResult.java:48)
+  	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.execute(ExecuteProcess.kt:277)
+  	... 140 more
+  Caused by: org.gradle.process.internal.ExecException: Process 'command '/data/data/com.termux/files/usr/bin/cmake'' finished with non-zero exit value 1
+  	at org.gradle.process.internal.DefaultExecHandle$ExecResultImpl.assertNormalExitValue(DefaultExecHandle.java:442)
+  	at com.android.build.gradle.internal.process.GradleProcessResult.assertNormalExitValue(GradleProcessResult.java:46)
+  	... 141 more
+
 
 * Try:
-> Run with --stacktrace option to get the stack trace.
 > Run with --info or --debug option to get more log output.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':TMessagesProj:configureCMakeRelWithDebInfo[arm64-v8a]'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:130)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:293)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:128)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:40)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+Caused by: com.android.builder.errors.EvalIssueException: [CXX1429] error when building with cmake using /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/jni/CMakeLists.txt: -- The C compiler identification is unknown
+-- The CXX compiler identification is unknown
+-- Configuring incomplete, errors occurred!
+
+C++ build system [configure] failed while executing:
+    /data/data/com.termux/files/usr/bin/cmake \
+      -H/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/jni \
+      -DCMAKE_SYSTEM_NAME=Android \
+      -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+      -DCMAKE_SYSTEM_VERSION=21 \
+      -DANDROID_ABI=arm64-v8a \
+      -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a \
+      -DANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 \
+      -DCMAKE_ANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 \
+      -DCMAKE_TOOLCHAIN_FILE=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake \
+      -DCMAKE_MAKE_PROGRAM=/data/data/com.termux/files/usr/bin/ninja \
+      -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a \
+      -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a \
+      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -B/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a \
+      -GNinja \
+      -DANDROID_STL=c++_static \
+      -DANDROID_PLATFORM=android-21
+  from /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj
+CMake Warning (dev) in CMakeLists.txt:
+  No project() command is present.  The top-level CMakeLists.txt file must
+  contain a literal, direct call to the project() command.  Add a line of
+  code such as
+
+    project(ProjectName)
+
+  near the top of the file, but after cmake_minimum_required().
+
+  CMake is pretending there is a "project(Project)" command on the first
+  line.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  cmake_minimum_required() should be called prior to this top-level project()
+  call.  Please see the cmake-commands(7) manual for usage documentation of
+  both commands.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt
+
+
+CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:55 (include)
+  /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt
+
+
+CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a/CMakeFiles/4.3.4/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt
+
+
+CMake Error in CMakeLists.txt:
+  The CMAKE_C_COMPILER:
+
+    /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/toolchains/llvm/prebuilt/bin/clang
+
+  is not a full path to an existing compiler tool.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+  the compiler, or to the compiler name if it is in the PATH.
+
+
+CMake Error in CMakeLists.txt:
+  The CMAKE_CXX_COMPILER:
+
+    /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/toolchains/llvm/prebuilt/bin/clang++
+
+  is not a full path to an existing compiler tool.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
+  to the compiler, or to the compiler name if it is in the PATH. : com.android.ide.common.process.ProcessException: -- The C compiler identification is unknown
+-- The CXX compiler identification is unknown
+-- Configuring incomplete, errors occurred!
+
+C++ build system [configure] failed while executing:
+    /data/data/com.termux/files/usr/bin/cmake \
+      -H/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/jni \
+      -DCMAKE_SYSTEM_NAME=Android \
+      -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+      -DCMAKE_SYSTEM_VERSION=21 \
+      -DANDROID_ABI=arm64-v8a \
+      -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a \
+      -DANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 \
+      -DCMAKE_ANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 \
+      -DCMAKE_TOOLCHAIN_FILE=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake \
+      -DCMAKE_MAKE_PROGRAM=/data/data/com.termux/files/usr/bin/ninja \
+      -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a \
+      -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a \
+      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -B/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a \
+      -GNinja \
+      -DANDROID_STL=c++_static \
+      -DANDROID_PLATFORM=android-21
+  from /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj
+CMake Warning (dev) in CMakeLists.txt:
+  No project() command is present.  The top-level CMakeLists.txt file must
+  contain a literal, direct call to the project() command.  Add a line of
+  code such as
+
+    project(ProjectName)
+
+  near the top of the file, but after cmake_minimum_required().
+
+  CMake is pretending there is a "project(Project)" command on the first
+  line.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  cmake_minimum_required() should be called prior to this top-level project()
+  call.  Please see the cmake-commands(7) manual for usage documentation of
+  both commands.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt
+
+
+CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:55 (include)
+  /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:146 (include)
+  CMakeLists.txt
+
+
+CMake Deprecation Warning at /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a/CMakeFiles/4.3.4/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt
+
+
+CMake Error in CMakeLists.txt:
+  The CMAKE_C_COMPILER:
+
+    /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/toolchains/llvm/prebuilt/bin/clang
+
+  is not a full path to an existing compiler tool.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+  the compiler, or to the compiler name if it is in the PATH.
+
+
+CMake Error in CMakeLists.txt:
+  The CMAKE_CXX_COMPILER:
+
+    /data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/toolchains/llvm/prebuilt/bin/clang++
+
+  is not a full path to an existing compiler tool.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
+  to the compiler, or to the compiler name if it is in the PATH.
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.execute(ExecuteProcess.kt:288)
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt$executeProcess$1.invoke(ExecuteProcess.kt:108)
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt$executeProcess$1.invoke(ExecuteProcess.kt:106)
+	at com.android.build.gradle.internal.cxx.timing.TimingEnvironmentKt.time(TimingEnvironment.kt:32)
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.executeProcess(ExecuteProcess.kt:106)
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.executeProcess$default(ExecuteProcess.kt:85)
+	at com.android.build.gradle.tasks.CmakeQueryMetadataGenerator.executeProcess(CmakeFileApiMetadataGenerator.kt:59)
+	at com.android.build.gradle.tasks.ExternalNativeJsonGenerator$configureOneAbi$1$1$3.invoke(ExternalNativeJsonGenerator.kt:247)
+	at com.android.build.gradle.tasks.ExternalNativeJsonGenerator$configureOneAbi$1$1$3.invoke(ExternalNativeJsonGenerator.kt:247)
+	at com.android.build.gradle.internal.cxx.timing.TimingEnvironmentKt.time(TimingEnvironment.kt:32)
+	at com.android.build.gradle.tasks.ExternalNativeJsonGenerator.configureOneAbi(ExternalNativeJsonGenerator.kt:247)
+	at com.android.build.gradle.tasks.ExternalNativeJsonGenerator.configure(ExternalNativeJsonGenerator.kt:113)
+	at com.android.build.gradle.tasks.ExternalNativeBuildJsonTask.doTaskAction(ExternalNativeBuildJsonTask.kt:89)
+	at com.android.build.gradle.internal.tasks.UnsafeOutputsTask$taskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:78)
+	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
+	at com.android.build.gradle.internal.tasks.UnsafeOutputsTask.taskAction(UnsafeOutputsTask.kt:81)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:244)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:229)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:212)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:195)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:162)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:50)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:28)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:61)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:26)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:75)
+	at org.gradle.internal.Either$Right.fold(Either.java:175)
+	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:73)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:48)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:46)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:35)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:49)
+	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:27)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:71)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:39)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:107)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:56)
+	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:64)
+	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:43)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.executeWithNonEmptySources(AbstractSkipEmptyWorkStep.java:125)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:56)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:36)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:75)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:41)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$execute$0(AssignMutableWorkspaceStep.java:35)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:289)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:31)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:22)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:48)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:35)
+	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:61)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:127)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:40)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: com.android.ide.common.process.ProcessException: Error while executing process /data/data/com.termux/files/usr/bin/cmake with arguments {-H/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/jni -DCMAKE_SYSTEM_NAME=Android -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_SYSTEM_VERSION=21 -DANDROID_ABI=arm64-v8a -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a -DANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 -DCMAKE_ANDROID_NDK=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018 -DCMAKE_TOOLCHAIN_FILE=/data/data/com.termux/files/home/lib/android-sdk-9123335/ndk/27.2.12479018/build/cmake/android.toolchain.cmake -DCMAKE_MAKE_PROGRAM=/data/data/com.termux/files/usr/bin/ninja -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/build/intermediates/cxx/RelWithDebInfo/315u2d5t/obj/arm64-v8a -DCMAKE_BUILD_TYPE=RelWithDebInfo -B/data/data/com.termux/files/home/telegram-project/Telegram-Android-master/TMessagesProj/.cxx/RelWithDebInfo/315u2d5t/arm64-v8a -GNinja -DANDROID_STL=c++_static -DANDROID_PLATFORM=android-21}
+	at com.android.build.gradle.internal.process.GradleProcessResult.buildProcessException(GradleProcessResult.java:73)
+	at com.android.build.gradle.internal.process.GradleProcessResult.assertNormalExitValue(GradleProcessResult.java:48)
+	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.execute(ExecuteProcess.kt:277)
+	... 140 more
+Caused by: org.gradle.process.internal.ExecException: Process 'command '/data/data/com.termux/files/usr/bin/cmake'' finished with non-zero exit value 1
+	at org.gradle.process.internal.DefaultExecHandle$ExecResultImpl.assertNormalExitValue(DefaultExecHandle.java:442)
+	at com.android.build.gradle.internal.process.GradleProcessResult.assertNormalExitValue(GradleProcessResult.java:46)
+	... 141 more
+
+	at com.android.builder.errors.IssueReporter.reportError(IssueReporter.kt:119)
+	at com.android.builder.errors.IssueReporter.reportError$default(IssueReporter.kt:114)
+	at com.android.build.gradle.internal.cxx.logging.IssueReporterLoggingEnvironment.log(IssueReporterLoggingEnvironment.kt:113)
+	at com.android.build.gradle.internal.cxx.logging.ThreadLoggingEnvironment$Companion.reportFormattedErrorToCurrentLogger(LoggingEnvironment.kt:230)
+	at com.android.build.gradle.internal.cxx.logging.LoggingEnvironmentKt.errorln(LoggingEnvironment.kt:62)
+	at com.android.build.gradle.tasks.ExternalNativeJsonGenerator.configure(ExternalNativeJsonGenerator.kt:121)
+	at com.android.build.gradle.tasks.ExternalNativeBuildJsonTask.doTaskAction(ExternalNativeBuildJsonTask.kt:89)
+	at com.android.build.gradle.internal.tasks.UnsafeOutputsTask$taskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:78)
+	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
+	at com.android.build.gradle.internal.tasks.UnsafeOutputsTask.taskAction(UnsafeOutputsTask.kt:81)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:244)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:229)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:212)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:195)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:162)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:50)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:28)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:61)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:26)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:75)
+	at org.gradle.internal.Either$Right.fold(Either.java:175)
+	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:73)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:48)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:46)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:35)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:49)
+	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:27)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:71)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:39)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:107)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:56)
+	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:64)
+	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:43)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.executeWithNonEmptySources(AbstractSkipEmptyWorkStep.java:125)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:56)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:36)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:75)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:41)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$execute$0(AssignMutableWorkspaceStep.java:35)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:289)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:31)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:22)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:48)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:35)
+	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:61)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:127)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:40)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+
 
 Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
 
@@ -326,5 +1117,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD FAILED in 1m 40s
-180 actionable tasks: 19 executed, 161 up-to-date
+BUILD FAILED in 1m 19s
+105 actionable tasks: 2 executed, 103 up-to-date
