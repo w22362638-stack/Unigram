@@ -63,8 +63,15 @@ jobs:
             :TMessagesProj_App:bundleBundleAfat_SDK23Release \
             :TMessagesProj_App:bundleBundleAfatRelease \
             :TMessagesProj_App:assembleAfatRelease \
-            --stacktrace \
+            --stacktrace --info --console=plain \
             --no-daemon
+
+      - name: Show Gradle failure
+        if: failure()
+        run: |
+          echo "===== GRADLE FAILURE ====="
+          grep -n -B 15 -A 40 -E "What went wrong|Execution failed for task|Caused by:|CMake Error|error:" build.log 2>/dev/null || true
+          echo "===== END FAILURE ====="
 
       - name: Verify Unigram package identity
         shell: bash
