@@ -62,16 +62,21 @@ jobs:
             --build-cache \
             --no-daemon
 
-      - name: Find APK files
+      - name: Prepare single APK
         shell: bash
         run: |
-          echo "=== APK FILES ==="
-          find . -type f -name "*.apk" -print
+          set -e
+          mkdir -p release
+          APK=$(find . -type f -name "*.apk" -not -path "./release/*" | head -n 1)
+          test -n "$APK"
+          cp "$APK" release/Telegram.apk
+          echo "APK: $APK"
+          ls -lh release/Telegram.apk
 
-      - name: Upload APK
+      - name: Upload single APK
         uses: actions/upload-artifact@v4
         with:
-          name: Unigram-release
-          path: |
-            **/*.apk
+          name: Telegram-APK
+          path: release/Telegram.apk
           if-no-files-found: error
+          retention-days: 7
