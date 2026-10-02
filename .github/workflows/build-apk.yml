@@ -27,7 +27,6 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           packages: 'platform-tools platforms;android-35 build-tools;35.0.0 ndk;27.2.12479018'
-        run: |
 
       - name: Clean Gradle state
         run: |
@@ -40,7 +39,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          chmod +x ./gradlew --no-daemon --max-workers=1
+            chmod +x ./gradlew
 
           ./gradlew --no-daemon --max-workers=1 :TMessagesProj_App:assembleAfatRelease             -PABI_FILTERS=arm64-v8a             -Pandroid.injected.build.abi=arm64-v8a             --no-daemon             --no-build-cache             --refresh-dependencies             --stacktrace             --warning-mode all             2>&1 | tee gradle-build.log
 
