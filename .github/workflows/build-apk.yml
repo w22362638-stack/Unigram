@@ -57,9 +57,9 @@ jobs:
           set -e
           chmod +x ./gradlew
 
-          ./gradlew --version
+          ./gradlew --stacktrace --info --version
 
-          ./gradlew --parallel \
+          ./gradlew --stacktrace --info --parallel \
             :TMessagesProj_App:bundleBundleAfat_SDK23Release \
             :TMessagesProj_App:bundleBundleAfatRelease \
             :TMessagesProj_App:assembleAfatRelease \
