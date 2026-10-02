@@ -38,11 +38,10 @@ jobs:
       - name: Build installable APK
         shell: bash
         run: |
-          set -o pipefail
+          run: |
+            set -o pipefail
             chmod +x ./gradlew
-
-          ./gradlew --no-daemon --max-workers=1 :TMessagesProj_App:assembleAfatRelease             -PABI_FILTERS=arm64-v8a             -Pandroid.injected.build.abi=arm64-v8a             --no-daemon             --no-build-cache             --refresh-dependencies             --stacktrace             --warning-mode all             2>&1 | tee gradle-build.log
-
+            ./gradlew --no-daemon --max-workers=1 :TMessagesProj_App:assembleAfatRelease -PABI_FILTERS=arm64-v8a --no-build-cache --stacktrace --warning-mode all 2>&1 | tee gradle-build.log
       - name: Show Gradle diagnostics
         if: failure()
         run: |
