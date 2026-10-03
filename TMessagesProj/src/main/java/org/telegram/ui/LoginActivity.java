@@ -4997,21 +4997,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
 
         private void animateSuccess(Runnable callback) {
-            if (currentType == AUTH_TYPE_FLASH_CALL) {
-                callback.run();
-                return;
-            }
-            for (int i = 0; i < codeFieldContainer.codeField.length; i++) {
-                int finalI = i;
-                codeFieldContainer.postDelayed(()-> codeFieldContainer.codeField[finalI].animateSuccessProgress(1f), i * 75L);
-            }
-            codeFieldContainer.postDelayed(()->{
-                for (int i = 0; i < codeFieldContainer.codeField.length; i++) {
-                    codeFieldContainer.codeField[i].animateSuccessProgress(0f);
-                }
-                callback.run();
-                codeFieldContainer.isFocusSuppressed = false;
-            }, codeFieldContainer.codeField.length * 75L + 400L);
+            callback.run();
+            codeFieldContainer.isFocusSuppressed = false;
         }
 
         private void shakeWrongCode() {
@@ -6958,21 +6945,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
 
         private void animateSuccess(Runnable callback) {
-            if (googleAccount != null) {
-                callback.run();
-                return;
-            }
-            for (int i = 0; i < codeFieldContainer.codeField.length; i++) {
-                int finalI = i;
-                codeFieldContainer.postDelayed(()-> codeFieldContainer.codeField[finalI].animateSuccessProgress(1f), i * 75L);
-            }
-            codeFieldContainer.postDelayed(()->{
-                for (int i = 0; i < codeFieldContainer.codeField.length; i++) {
-                    codeFieldContainer.codeField[i].animateSuccessProgress(0f);
-                }
-                callback.run();
-                codeFieldContainer.isFocusSuppressed = false;
-            }, codeFieldContainer.codeField.length * 75L + 400L);
+            callback.run();
+            codeFieldContainer.isFocusSuppressed = false;
         }
 
         private void shakeWrongCode() {
