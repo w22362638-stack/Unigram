@@ -3181,6 +3181,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             phoneInputData.patterns = phoneFormatMap.get(codeField.getText().toString());
             int reqId = ConnectionsManager.getInstance(currentAccount).sendRequest(req, (response, error) -> AndroidUtilities.runOnUIThread(() -> {
                 nextPressed = false;
+                FileLog.d("LOGIN_SEND_CODE_RESPONSE response=" + response + " error=" + (error != null ? error.text : "null"));
                 if (error == null) {
                     if (response instanceof TLRPC.TL_auth_sentCodeSuccess) {
                         final TLRPC.auth_Authorization auth = ((TLRPC.TL_auth_sentCodeSuccess) response).authorization;
@@ -3245,6 +3246,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             }), ConnectionsManager.RequestFlagFailOnServerErrors | ConnectionsManager.RequestFlagWithoutLogin | ConnectionsManager.RequestFlagTryDifferentDc | ConnectionsManager.RequestFlagEnableUnauthorized);
             needShowProgress(reqId);
+        FileLog.d("LOGIN_SEND_CODE_REQUEST_SENT phone=" + phone);
         }
 
         private boolean numberFilled;
