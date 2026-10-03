@@ -29,9 +29,6 @@ jobs:
           packages: 'platform-tools platforms;android-35 build-tools;35.0.0 ndk;27.2.12479018'
 
       - name: Build APK
-          echo "=== APP_PACKAGE CHECK ==="
-          grep "^APP_PACKAGE=" gradle.properties
-          ./gradlew -q properties | grep "^appPackage:" || true
         run: |
           chmod +x ./gradlew
           ./gradlew --no-daemon --max-workers=1 :TMessagesProj_App:assembleAfatRelease --stacktrace
