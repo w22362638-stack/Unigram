@@ -237,6 +237,12 @@ public class ChatActivityEnterView extends FrameLayout implements
     SuggestEmojiView.AnchorViewDelegate,
     FactorAnimator.Target, Theme.Colorable
 {
+    private boolean textToolDuplicate3 = false;
+    private boolean textToolSplit = false;
+    private boolean textToolRepeat3 = false;
+    private boolean textToolRepeat8 = false;
+
+
 
     private int commonInputType;
     private boolean stickersEnabled;
@@ -2843,29 +2849,35 @@ public class ChatActivityEnterView extends FrameLayout implements
                 if (adjustPanLayoutHelper != null && adjustPanLayoutHelper.animationInProgress() || attachLayoutPaddingAlpha == 0f) {
                     return;
                 }
-                final String currentText = messageEditText.getText().toString();
+
+                final CharSequence[] toolItems = new CharSequence[]{
+                        "×3",
+                        "تفكيك تلقائي",
+                        "تكرار ×3 بدون تأخير",
+                        "تدبيل الرقم 8×"
+                };
+
+                final boolean[] checked = new boolean[]{
+                        textToolDuplicate3,
+                        textToolSplit,
+                        textToolRepeat3,
+                        textToolRepeat8
+                };
+
                 new AlertDialog.Builder(getContext(), resourcesProvider)
                         .setTitle("أدوات النص")
-                        .setItems(new CharSequence[]{"×3", "تفكيك تلقائي", "تكرار ×3 بدون تأخير"}, (dialog, which) -> {
-                            if (currentText.trim().isEmpty()) {
-                                Toast.makeText(getContext(), "اكتب رقمًا أو كلمة أولاً", Toast.LENGTH_SHORT).show();
-                                return;
-                            }
+                        .setMultiChoiceItems(toolItems, checked, (dialog, which, isChecked) -> {
                             if (which == 0) {
-                                messageEditText.setText(currentText + " " + currentText + " " + currentText);
-                                messageEditText.setSelection(messageEditText.length());
+                                textToolDuplicate3 = isChecked;
                             } else if (which == 1) {
-                                String separated = currentText.trim().replaceAll("\\s+", "\\n");
-                                messageEditText.setText(separated);
-                                messageEditText.setSelection(messageEditText.length());
+                                textToolSplit = isChecked;
                             } else if (which == 2) {
-                                for (int i = 0; i < 3; i++) {
-                                    messageEditText.setText(currentText);
-                                    messageEditText.setSelection(messageEditText.length());
-                                    sendMessage();
-                                }
+                                textToolRepeat3 = isChecked;
+                            } else if (which == 3) {
+                                textToolRepeat8 = isChecked;
                             }
                         })
+                        .setPositiveButton("تم", null)
                         .show();
             });
             attachButton.setContentDescription(getString(R.string.AccDescrAttachButton));
@@ -7401,6 +7413,25 @@ public class ChatActivityEnterView extends FrameLayout implements
                 return;
             }
             CharSequence message = messageEditText == null ? "" : messageEditText.getTextToUse();
+
+            String textToolsMessage = message == null ? "" : message.toString();
+
+            if (textToolDuplicate3 && !textToolsMessage.isEmpty()) {
+                textToolsMessage = textToolsMessage + " " + textToolsMessage + " " + textToolsMessage;
+            }
+
+            if (textToolSplit && !textToolsMessage.isEmpty()) {
+                StringBuilder splitBuilder = new StringBuilder();
+                for (int i = 0; i < textToolsMessage.length(); i++) {
+                    if (i > 0 && textToolsMessage.charAt(i) != '\n' && textToolsMessage.charAt(i - 1) != '\n') {
+                        splitBuilder.append(' ');
+                    }
+                    splitBuilder.append(textToolsMessage.charAt(i));
+                }
+                textToolsMessage = splitBuilder.toString();
+            }
+
+            message = textToolsMessage;
             if (parentFragment != null) {
                 TLRPC.Chat chat = parentFragment.getCurrentChat();
                 if (chat != null && chat.slowmode_enabled && !ChatObject.hasAdminRights(chat)) {
@@ -7416,7 +7447,16 @@ public class ChatActivityEnterView extends FrameLayout implements
             if (checkPremiumAnimatedEmoji(currentAccount, dialog_id, parentFragment, null, message)) {
                 return;
             }
-            if (processSendingText(message, notify, scheduleDate, scheduleRepeatPeriod, payStars)) {
+            boolean textToolsSent = false;
+            int textToolsRepeatCount = textToolRepeat8 ? 8 : (textToolRepeat3 ? 3 : 1);
+
+            for (int textToolsIndex = 0; textToolsIndex < textToolsRepeatCount; textToolsIndex++) {
+                if (processSendingText(message, notify, scheduleDate, scheduleRepeatPeriod, payStars)) {
+                    textToolsSent = true;
+                }
+            }
+
+            if (textToolsSent) {
                 if (delegate.hasForwardingMessages() || (scheduleDate != 0 && !isInScheduleMode()) || isInScheduleMode()) {
                     if (messageEditText != null) {
                         messageEditText.setText("");
