@@ -33,13 +33,19 @@ jobs:
           chmod +x ./gradlew
           ./gradlew --no-daemon --max-workers=1 :TMessagesProj_App:assembleAfatRelease --stacktrace
 
-      - name: Find APK
+      - name: Prepare and sign APK
         run: |
+          set -e
+          APK="TMessagesProj_App/build/outputs/apk/afat/release/app.apk"
+          test -f "$APK"
+          BUILD_TOOLS="$ANDROID_HOME/build-tools/35.0.0"
+          keytool -genkeypair -v -keystore "$RUNNER_TEMP/debug.keystore" -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          "$BUILD_TOOLS/zipalign" -f 4 "$APK" "$RUNNER_TEMP/aligned.apk"
+          "$BUILD_TOOLS/apksigner" sign --ks "$RUNNER_TEMP/debug.keystore" --ks-pass pass:android --key-pass pass:android --ks-key-alias androiddebugkey "$RUNNER_TEMP/aligned.apk"
+          "$BUILD_TOOLS/apksigner" verify --verbose "$RUNNER_TEMP/aligned.apk"
           mkdir -p release
-          find . -type f -name "*.apk" -print
-          APK=$(find . -type f -name "*.apk" | head -n 1)
-          test -n "$APK"
-          cp "$APK" release/Unigram.apk
+          cp "$RUNNER_TEMP/aligned.apk" release/Unigram.apk
+          ls -lh release/Unigram.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
