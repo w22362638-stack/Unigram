@@ -3246,7 +3246,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             }), ConnectionsManager.RequestFlagFailOnServerErrors | ConnectionsManager.RequestFlagWithoutLogin | ConnectionsManager.RequestFlagTryDifferentDc | ConnectionsManager.RequestFlagEnableUnauthorized);
             needShowProgress(reqId);
-        FileLog.d("LOGIN_SEND_CODE_REQUEST_SENT phone=" + phone);
+        FileLog.d("LOGIN_SEND_CODE_REQUEST_SENT phone=" + phone); AndroidUtilities.runOnUIThread(() -> Toast.makeText(getParentActivity(), "SEND_CODE_REQUEST_SENT", Toast.LENGTH_LONG).show());
         }
 
         private boolean numberFilled;
