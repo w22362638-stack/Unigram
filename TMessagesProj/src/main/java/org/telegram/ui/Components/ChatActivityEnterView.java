@@ -2847,6 +2847,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                         .setTitle("أدوات النص")
                         .setItems(new CharSequence[]{"×3", "تفكيك تلقائي", "تكرار ×3 بدون تأخير"}, (dialog, which) -> {
                             if (currentText.trim().isEmpty()) {
+                                Toast.makeText(getContext(), "اكتب رقمًا أو كلمة أولاً", Toast.LENGTH_SHORT).show();
                                 return;
                             }
                             if (which == 0) {
