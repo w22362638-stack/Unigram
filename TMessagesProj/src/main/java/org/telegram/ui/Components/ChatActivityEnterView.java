@@ -2851,33 +2851,26 @@ public class ChatActivityEnterView extends FrameLayout implements
                 }
 
                 final CharSequence[] toolItems = new CharSequence[]{
-                        "×3",
-                        "تفكيك تلقائي",
-                        "تكرار ×3 بدون تأخير",
-                        "تدبيل الرقم 8×"
-                };
-
-                final boolean[] checked = new boolean[]{
-                        textToolDuplicate3,
-                        textToolSplit,
-                        textToolRepeat3,
-                        textToolRepeat8
+                        (textToolDuplicate3 ? "✓ " : "□ ") + "×3",
+                        (textToolSplit ? "✓ " : "□ ") + "تفكيك تلقائي",
+                        (textToolRepeat3 ? "✓ " : "□ ") + "تكرار ×3 بدون تأخير",
+                        (textToolRepeat8 ? "✓ " : "□ ") + "تدبيل الرقم 8×"
                 };
 
                 new AlertDialog.Builder(getContext(), resourcesProvider)
                         .setTitle("أدوات النص")
-                        .setMultiChoiceItems(toolItems, checked, (dialog, which, isChecked) -> {
+                        .setItems(toolItems, (dialog, which) -> {
                             if (which == 0) {
-                                textToolDuplicate3 = isChecked;
+                                textToolDuplicate3 = !textToolDuplicate3;
                             } else if (which == 1) {
-                                textToolSplit = isChecked;
+                                textToolSplit = !textToolSplit;
                             } else if (which == 2) {
-                                textToolRepeat3 = isChecked;
+                                textToolRepeat3 = !textToolRepeat3;
                             } else if (which == 3) {
-                                textToolRepeat8 = isChecked;
+                                textToolRepeat8 = !textToolRepeat8;
                             }
                         })
-                        .setPositiveButton("تم", null)
+                        .setNegativeButton("إغلاق", null)
                         .show();
             });
             attachButton.setContentDescription(getString(R.string.AccDescrAttachButton));
