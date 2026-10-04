@@ -2842,7 +2842,29 @@ public class ChatActivityEnterView extends FrameLayout implements
                 if (adjustPanLayoutHelper != null && adjustPanLayoutHelper.animationInProgress() || attachLayoutPaddingAlpha == 0f) {
                     return;
                 }
-                delegate.didPressAttachButton();
+                final String currentText = messageEditText.getText().toString();
+                new AlertDialog.Builder(getContext(), resourcesProvider)
+                        .setTitle("أدوات النص")
+                        .setItems(new CharSequence[]{"×3", "تفكيك تلقائي", "تكرار ×3 بدون تأخير"}, (dialog, which) -> {
+                            if (currentText.trim().isEmpty()) {
+                                return;
+                            }
+                            if (which == 0) {
+                                messageEditText.setText(currentText + " " + currentText + " " + currentText);
+                                messageEditText.setSelection(messageEditText.length());
+                            } else if (which == 1) {
+                                String separated = currentText.trim().replaceAll("\\s+", "\\n");
+                                messageEditText.setText(separated);
+                                messageEditText.setSelection(messageEditText.length());
+                            } else if (which == 2) {
+                                for (int i = 0; i < 3; i++) {
+                                    messageEditText.setText(currentText);
+                                    messageEditText.setSelection(messageEditText.length());
+                                    sendMessage();
+                                }
+                            }
+                        })
+                        .show();
             });
             attachButton.setContentDescription(getString(R.string.AccDescrAttachButton));
             updateFieldRight(1);
