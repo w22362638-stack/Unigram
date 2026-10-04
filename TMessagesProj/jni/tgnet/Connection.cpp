@@ -287,7 +287,7 @@ void Connection::connect() {
     connectionInProcess = true;
     connectionState = TcpConnectionStageConnecting;
     isMediaConnection = false;
-    uint8_t strategy = ConnectionsManager::getInstance(currentDatacenter->instanceNum).getIpStratagy();
+    uint8_t strategy = USE_IPV4_ONLY;
     uint32_t ipv6;
     if (strategy == USE_IPV6_ONLY) {
         ipv6 = TcpAddressFlagIpv6;
