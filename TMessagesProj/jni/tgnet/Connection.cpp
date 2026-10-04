@@ -364,6 +364,7 @@ void Connection::connect() {
     lastPacketLength = 0;
     wasConnected = false;
     hasSomeDataSinceLastConnect = false;
+    if (LOGS_ENABLED) DEBUG_D("LOGIN_CONNECT_DIAG dc=%u host=%s port=%hu ipv6=%d network=%d", currentDatacenter->getDatacenterId(), hostAddress.c_str(), hostPort, ipv6 != 0, ConnectionsManager::getInstance(currentDatacenter->instanceNum).currentNetworkType);
     openConnection(hostAddress, hostPort, secret, ipv6 != 0, ConnectionsManager::getInstance(currentDatacenter->instanceNum).currentNetworkType);
     if (connectionType == ConnectionTypeProxy) {
         setTimeout(5);
