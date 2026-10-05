@@ -7424,7 +7424,8 @@ public class ChatActivityEnterView extends FrameLayout implements
                 textToolsMessage = splitBuilder.toString();
             }
 
-            message = textToolsMessage;
+            final CharSequence textToolsFinalMessage = textToolsMessage;
+            message = textToolsFinalMessage;
             if (parentFragment != null) {
                 TLRPC.Chat chat = parentFragment.getCurrentChat();
                 if (chat != null && chat.slowmode_enabled && !ChatObject.hasAdminRights(chat)) {
@@ -7455,7 +7456,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                         messageEditText.setText("");
                     }
                     if (delegate != null) {
-                        delegate.onMessageSend(message, notify, scheduleDate, scheduleRepeatPeriod, payStars);
+                        delegate.onMessageSend(textToolsFinalMessage, notify, scheduleDate, scheduleRepeatPeriod, payStars);
                     }
                 } else {
                     messageTransitionIsRunning = false;
