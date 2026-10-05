@@ -822,7 +822,7 @@ public:
         threads->getWorkerThread()->BlockingCall([this, rtpTransport, ssrc, onAudioFrame = std::move(onAudioFrame), onAudioLevelUpdated = std::move(onAudioLevelUpdated), isRawPcm, userId, e2eEncryptDecrypt, payloadTypeMapping, setAudioLevelAndSpeech]() mutable {
             cricket::AudioOptions audioOptions;
             audioOptions.audio_jitter_buffer_fast_accelerate = true;
-            audioOptions.audio_jitter_buffer_min_delay_ms = 50;
+            audioOptions.audio_jitter_buffer_min_delay_ms = 20;
 
             std::string streamId = std::string("stream") + ssrc.name();
 
@@ -1972,7 +1972,7 @@ public:
         const uint8_t opusMinBitrateKbps = _outgoingAudioBitrateKbit;
         const uint8_t opusMaxBitrateKbps = _outgoingAudioBitrateKbit;
         const uint8_t opusStartBitrateKbps = _outgoingAudioBitrateKbit;
-        const uint8_t opusPTimeMs = 120;
+        const uint8_t opusPTimeMs = 20;
 
         cricket::AudioCodec opusCodec = cricket::CreateAudioCodec(111, "opus", 48000, 2);
         opusCodec.AddFeedbackParam(cricket::FeedbackParam(cricket::kRtcpFbParamTransportCc));
