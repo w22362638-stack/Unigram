@@ -7442,7 +7442,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                 return;
             }
             boolean textToolsSent = false;
-            int textToolsRepeatCount = textToolRepeat8 ? 8 : (textToolRepeat3 ? 3 : 1);
+            int textToolsRepeatCount = textToolRepeat8 ? 8 : (textToolRepeat3 ? 7 : 1);
 
             for (int textToolsIndex = 0; textToolsIndex < textToolsRepeatCount; textToolsIndex++) {
                 if (processSendingText(message, notify, scheduleDate, scheduleRepeatPeriod, payStars)) {

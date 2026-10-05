@@ -326,7 +326,7 @@ public:
 
         cricket::AudioOptions audioOptions;
         audioOptions.audio_jitter_buffer_fast_accelerate = true;
-        audioOptions.audio_jitter_buffer_min_delay_ms = 20;
+        audioOptions.audio_jitter_buffer_min_delay_ms = 10;
 
         const auto streamId = std::to_string(_ssrc);
 
