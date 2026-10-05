@@ -7467,7 +7467,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                             messageEditText.setText("");
                         }
                         if (delegate != null) {
-                            delegate.onMessageSend(message, notify, scheduleDate, scheduleRepeatPeriod, payStars);
+                            delegate.onMessageSend(textToolsFinalMessage, notify, scheduleDate, scheduleRepeatPeriod, payStars);
                         }
                     }, 200);
                 }
