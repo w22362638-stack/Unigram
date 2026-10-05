@@ -237,7 +237,7 @@ public class ChatActivityEnterView extends FrameLayout implements
     SuggestEmojiView.AnchorViewDelegate,
     FactorAnimator.Target, Theme.Colorable
 {
-    private boolean textToolDuplicate3 = false;
+    private boolean textToolDuplicate7 = false;
     private boolean textToolSplit = false;
     private boolean textToolRepeat3 = false;
     private boolean textToolRepeat8 = false;
@@ -2851,9 +2851,9 @@ public class ChatActivityEnterView extends FrameLayout implements
                 }
 
                 final CharSequence[] toolItems = new CharSequence[]{
-                        (textToolDuplicate3 ? "✓ " : "□ ") + "×3",
+                        (textToolDuplicate7 ? "✓ " : "□ ") + "×7",
                         (textToolSplit ? "✓ " : "□ ") + "تفكيك تلقائي",
-                        (textToolRepeat3 ? "✓ " : "□ ") + "تكرار ×3 بدون تأخير",
+                        (textToolRepeat3 ? "✓ " : "□ ") + "تكرار ×7 بدون تأخير",
                         (textToolRepeat8 ? "✓ " : "□ ") + "تدبيل الرقم 8×"
                 };
 
@@ -2861,7 +2861,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                         .setTitle("أدوات النص")
                         .setItems(toolItems, (dialog, which) -> {
                             if (which == 0) {
-                                textToolDuplicate3 = !textToolDuplicate3;
+                                textToolDuplicate7 = !textToolDuplicate7;
                             } else if (which == 1) {
                                 textToolSplit = !textToolSplit;
                             } else if (which == 2) {
@@ -7409,7 +7409,7 @@ public class ChatActivityEnterView extends FrameLayout implements
 
             String textToolsMessage = message == null ? "" : message.toString();
 
-            if (textToolDuplicate3 && !textToolsMessage.isEmpty()) {
+            if (textToolDuplicate7 && !textToolsMessage.isEmpty()) {
                 textToolsMessage = textToolsMessage + " " + textToolsMessage + " " + textToolsMessage;
             }
 
