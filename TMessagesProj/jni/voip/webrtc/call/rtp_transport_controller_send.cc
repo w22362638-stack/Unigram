@@ -76,8 +76,8 @@ RtpTransportControllerSend::RtpTransportControllerSend(
       pacer_(&env_.clock(),
              &packet_router_,
              env_.field_trials(),
-             TimeDelta::Millis(5),
-             3),
+             TimeDelta::Millis(1),
+             1),
       observer_(nullptr),
       controller_factory_override_(config.network_controller_factory),
       controller_factory_fallback_(
