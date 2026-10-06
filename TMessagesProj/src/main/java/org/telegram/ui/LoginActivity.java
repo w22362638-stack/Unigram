@@ -3152,7 +3152,6 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 changePhoneCode.settings = settings;
                 req = changePhoneCode;
             } else {
-                ConnectionsManager.getInstance(currentAccount).cleanup(false);
 
                 TLRPC.TL_auth_sendCode sendCode = new TLRPC.TL_auth_sendCode();
                 sendCode.api_hash = BuildVars.APP_HASH;
