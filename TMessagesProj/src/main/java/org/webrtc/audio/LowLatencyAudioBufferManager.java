@@ -62,16 +62,21 @@ class LowLatencyAudioBufferManager {
       } else if (keepLoweringBufferSize) {
         ticksUntilNextDecrease--;
         if (ticksUntilNextDecrease <= 0) {
-          // No underrun seen for 100 ms, try to lower the buffer size by 10ms.
-          final int bufferSize10ms = audioTrack.getPlaybackRate() / 100;
-          // Never go below a buffer size of 10ms.
+          // No underrun seen for 100 ms, try to lower the buffer size by 5ms.
+          final int bufferSize5ms = Math.max(1, audioTrack.getPlaybackRate() / 200);
+          // Never go below a 5ms buffer.
           final int currentBufferSize = audioTrack.getBufferSizeInFrames();
-          final int newBufferSize = Math.max(bufferSize10ms, currentBufferSize - bufferSize10ms);
+          final int newBufferSize = Math.max(bufferSize5ms, currentBufferSize - bufferSize5ms);
           if (newBufferSize != currentBufferSize) {
             Logging.d(TAG,
                 "Lowering AudioTrack buffer size from " + currentBufferSize + " to "
                     + newBufferSize);
             audioTrack.setBufferSizeInFrames(newBufferSize);
+            Logging.d(TAG,
+                "UNIGRAM_LATENCY actual AudioTrack buffer="
+                    + audioTrack.getBufferSizeInFrames()
+                    + " frames (" + (audioTrack.getBufferSizeInFrames() * 1000
+                    / audioTrack.getPlaybackRate()) + " ms)");
           }
           ticksUntilNextDecrease = 10;
         }

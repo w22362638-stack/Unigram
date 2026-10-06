@@ -232,8 +232,9 @@ class WebRtcAudioTrack {
   private int initPlayout(int sampleRate, int channels, double bufferSizeFactor) {
     threadChecker.checkIsOnValidThread();
     Logging.d(TAG,
-        "initPlayout(sampleRate=" + sampleRate + ", channels=" + channels
-            + ", bufferSizeFactor=" + bufferSizeFactor + ")");
+        "UNIGRAM_LATENCY initPlayout sampleRate=" + sampleRate
+            + " channels=" + channels
+            + " bufferSizeFactor=" + bufferSizeFactor);
     final int bytesPerFrame = channels * (BITS_PER_SAMPLE / 8);
     byteBuffer = ByteBuffer.allocateDirect(bytesPerFrame * (sampleRate / BUFFERS_PER_SECOND));
     Logging.d(TAG, "byteBuffer.capacity: " + byteBuffer.capacity());
