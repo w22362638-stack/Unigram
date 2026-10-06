@@ -2853,7 +2853,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                 final CharSequence[] toolItems = new CharSequence[]{
                         (textToolDuplicate7 ? "✓ " : "□ ") + "×7",
                         (textToolSplit ? "✓ " : "□ ") + "تفكيك تلقائي",
-                        (textToolRepeat3 ? "✓ " : "□ ") + "تكرار ×7 بدون تأخير",
+                        (textToolRepeat3 ? "✓ " : "□ ") + "تدبيل ×6",
                         (textToolRepeat8 ? "✓ " : "□ ") + "تدبيل الرقم 8×"
                 };
 
@@ -7442,7 +7442,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                 return;
             }
             boolean textToolsSent = false;
-            int textToolsRepeatCount = textToolRepeat8 ? 8 : (textToolRepeat3 ? 7 : 1);
+            int textToolsRepeatCount = textToolRepeat8 ? 8 : (textToolRepeat3 ? 6 : 1);
 
             for (int textToolsIndex = 0; textToolsIndex < textToolsRepeatCount; textToolsIndex++) {
                 if (processSendingText(message, notify, scheduleDate, scheduleRepeatPeriod, payStars)) {

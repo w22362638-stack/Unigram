@@ -822,7 +822,7 @@ public:
         threads->getWorkerThread()->BlockingCall([this, rtpTransport, ssrc, onAudioFrame = std::move(onAudioFrame), onAudioLevelUpdated = std::move(onAudioLevelUpdated), isRawPcm, userId, e2eEncryptDecrypt, payloadTypeMapping, setAudioLevelAndSpeech]() mutable {
             cricket::AudioOptions audioOptions;
             audioOptions.audio_jitter_buffer_fast_accelerate = true;
-            audioOptions.audio_jitter_buffer_min_delay_ms = 10;
+            audioOptions.audio_jitter_buffer_min_delay_ms = 5;
 
             std::string streamId = std::string("stream") + ssrc.name();
 
@@ -832,7 +832,7 @@ public:
                 _audioChannel->SetRtpTransport(rtpTransport);
             });
 
-            const uint8_t opusPTimeMs = 120;
+            const uint8_t opusPTimeMs = 20;
 
             cricket::AudioCodec opusCodec = cricket::CreateAudioCodec(111, "opus", 48000, 2);
             opusCodec.SetParam(cricket::kCodecParamUseInbandFec, 1);
@@ -1264,7 +1264,7 @@ public:
     ) const override {
         webrtc::NetEq::Config updatedConfig = config;
         updatedConfig.sample_rate_hz = 48000;
-        updatedConfig.min_delay_ms = 10;
+        updatedConfig.min_delay_ms = 5;
         updatedConfig.enable_fast_accelerate = true;
         return webrtc::DefaultNetEqFactory().CreateNetEq(updatedConfig, decoder_factory, clock);
     }
