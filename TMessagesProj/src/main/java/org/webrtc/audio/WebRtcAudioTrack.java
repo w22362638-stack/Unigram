@@ -265,9 +265,8 @@ class WebRtcAudioTrack {
     // Don't use low-latency mode when a bufferSizeFactor > 1 is used. When bufferSizeFactor > 1
     // we want to use a larger buffer to prevent underruns. However, low-latency mode would
     // decrease the buffer size, which makes the bufferSizeFactor have no effect.
-    if (bufferSizeFactor > 1.0) {
-      useLowLatency = false;
-    }
+    // Keep Android PERFORMANCE_MODE_LOW_LATENCY enabled for the
+    // receive/playout path. The framework may clamp the buffer safely.
 
     // Ensure that prevision audio session was stopped correctly before trying
     // to create a new AudioTrack.

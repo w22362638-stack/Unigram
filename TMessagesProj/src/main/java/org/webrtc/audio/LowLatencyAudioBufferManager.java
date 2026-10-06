@@ -33,7 +33,7 @@ class LowLatencyAudioBufferManager {
 
   public LowLatencyAudioBufferManager() {
     this.prevUnderrunCount = 0;
-    this.ticksUntilNextDecrease = 10;
+    this.ticksUntilNextDecrease = 3;
     this.keepLoweringBufferSize = true;
     this.bufferIncreaseCounter = 0;
   }
@@ -58,15 +58,15 @@ class LowLatencyAudioBufferManager {
         // Stop trying to lower the buffer size.
         keepLoweringBufferSize = false;
         prevUnderrunCount = underrunCount;
-        ticksUntilNextDecrease = 10;
+        ticksUntilNextDecrease = 3;
       } else if (keepLoweringBufferSize) {
         ticksUntilNextDecrease--;
         if (ticksUntilNextDecrease <= 0) {
-          // No underrun seen for 100 ms, try to lower the buffer size by 5ms.
-          final int bufferSize5ms = Math.max(1, audioTrack.getPlaybackRate() / 200);
-          // Never go below a 5ms buffer.
+          // No underrun seen, aggressively lower the playout buffer by 2ms.
+          final int bufferSize2ms = Math.max(1, audioTrack.getPlaybackRate() / 500);
+          // Never request less than a 2ms buffer.
           final int currentBufferSize = audioTrack.getBufferSizeInFrames();
-          final int newBufferSize = Math.max(bufferSize5ms, currentBufferSize - bufferSize5ms);
+          final int newBufferSize = Math.max(bufferSize2ms, currentBufferSize - bufferSize2ms);
           if (newBufferSize != currentBufferSize) {
             Logging.d(TAG,
                 "Lowering AudioTrack buffer size from " + currentBufferSize + " to "
@@ -78,7 +78,7 @@ class LowLatencyAudioBufferManager {
                     + " frames (" + (audioTrack.getBufferSizeInFrames() * 1000
                     / audioTrack.getPlaybackRate()) + " ms)");
           }
-          ticksUntilNextDecrease = 10;
+          ticksUntilNextDecrease = 3;
         }
       }
     }
