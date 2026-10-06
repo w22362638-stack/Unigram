@@ -263,6 +263,8 @@ public class PeerConnectionFactory {
       checkInitializeHasBeenCalled();
       if (audioDeviceModule == null) {
         audioDeviceModule = JavaAudioDeviceModule.builder(ContextUtils.getApplicationContext())
+                                .setUseHardwareAcousticEchoCanceler(false)
+                                .setUseHardwareNoiseSuppressor(false)
                                 .createAudioDeviceModule();
       }
       return nativeCreatePeerConnectionFactory(ContextUtils.getApplicationContext(), options,
