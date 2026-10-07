@@ -1,5 +1,6 @@
 #include "GroupInstanceCustomImpl.h"
 
+#include <algorithm>
 #include <memory>
 #include <iomanip>
 
@@ -3470,12 +3471,18 @@ public:
     }
 
     void setVolume(uint32_t ssrc, double volume) {
+        // Local receive-only voice boost. Keep mute at 0 and cap at 200%.
+        constexpr double kIncomingVoiceBoost = 1.10;
+        const double effectiveVolume =
+                volume <= 0.0 ? 0.0 : std::min(volume * kIncomingVoiceBoost, 2.0);
+
         auto current = _volumeBySsrc.find(ssrc);
-        if (current != _volumeBySsrc.end() && std::abs(current->second - volume) < 0.0001) {
+        if (current != _volumeBySsrc.end() &&
+            std::abs(current->second - effectiveVolume) < 0.0001) {
             return;
         }
 
-        _volumeBySsrc[ssrc] = volume;
+        _volumeBySsrc[ssrc] = effectiveVolume;
 
         auto it = _incomingAudioChannels.find(ChannelId(ssrc));
         if (it != _incomingAudioChannels.end()) {
