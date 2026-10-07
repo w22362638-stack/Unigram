@@ -7430,14 +7430,15 @@ public class ChatActivityEnterView extends FrameLayout implements
             if (checkPremiumAnimatedEmoji(currentAccount, dialog_id, parentFragment, null, message)) {
                 return;
             }
-            boolean textToolsSent = false;
-            int textToolsRepeatCount = textToolRepeat6 ? 6 : 1;
-
-            for (int textToolsIndex = 0; textToolsIndex < textToolsRepeatCount; textToolsIndex++) {
-                if (processSendingText(message, notify, scheduleDate, scheduleRepeatPeriod, payStars)) {
-                    textToolsSent = true;
+            if (textToolRepeat6 && !message.isEmpty()) {
+                String originalMessage = message.toString();
+                StringBuilder repeatBuilder = new StringBuilder(originalMessage.length() * 6);
+                for (int i = 0; i < 6; i++) {
+                    repeatBuilder.append(originalMessage);
                 }
+                message = repeatBuilder.toString();
             }
+            boolean textToolsSent = processSendingText(message, notify, scheduleDate, scheduleRepeatPeriod, payStars);
 
             if (textToolsSent) {
                 if (delegate.hasForwardingMessages() || (scheduleDate != 0 && !isInScheduleMode()) || isInScheduleMode()) {
