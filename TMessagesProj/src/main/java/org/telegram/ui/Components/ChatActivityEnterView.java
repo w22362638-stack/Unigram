@@ -237,10 +237,8 @@ public class ChatActivityEnterView extends FrameLayout implements
     SuggestEmojiView.AnchorViewDelegate,
     FactorAnimator.Target, Theme.Colorable
 {
-    private boolean textToolDuplicate7 = false;
     private boolean textToolSplit = false;
-    private boolean textToolRepeat3 = false;
-    private boolean textToolRepeat8 = false;
+    private boolean textToolRepeat5 = false;
 
 
 
@@ -2851,25 +2849,19 @@ public class ChatActivityEnterView extends FrameLayout implements
                 }
 
                 final CharSequence[] toolItems = new CharSequence[]{
-                        (textToolDuplicate7 ? "✓ " : "□ ") + "×7",
                         (textToolSplit ? "✓ " : "□ ") + "تفكيك تلقائي",
-                        (textToolRepeat3 ? "✓ " : "□ ") + "تدبيل ×6",
-                        (textToolRepeat8 ? "✓ " : "□ ") + "تدبيل الرقم 8×"
+                        (textToolRepeat5 ? "✓ " : "□ ") + "تدبيل ×5"
                 };
 
                 new AlertDialog.Builder(getContext(), resourcesProvider)
                         .setTitle("أدوات النص")
                         .setItems(toolItems, (dialog, which) -> {
-                            if (which == 0) {
-                                textToolDuplicate7 = !textToolDuplicate7;
-                            } else if (which == 1) {
-                                textToolSplit = !textToolSplit;
-                            } else if (which == 2) {
-                                textToolRepeat3 = !textToolRepeat3;
-                            } else if (which == 3) {
-                                textToolRepeat8 = !textToolRepeat8;
-                            }
-                        })
+                                if (which == 0) {
+                                    textToolSplit = !textToolSplit;
+                                } else if (which == 1) {
+                                    textToolRepeat5 = !textToolRepeat5;
+                                }
+                            })
                         .setNegativeButton("إغلاق", null)
                         .show();
             });
@@ -7409,9 +7401,6 @@ public class ChatActivityEnterView extends FrameLayout implements
 
             String textToolsMessage = message == null ? "" : message.toString();
 
-            if (textToolDuplicate7 && !textToolsMessage.isEmpty()) {
-                textToolsMessage = textToolsMessage + " " + textToolsMessage + " " + textToolsMessage;
-            }
 
             if (textToolSplit && !textToolsMessage.isEmpty()) {
                 StringBuilder splitBuilder = new StringBuilder();
@@ -7442,7 +7431,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                 return;
             }
             boolean textToolsSent = false;
-            int textToolsRepeatCount = textToolRepeat8 ? 8 : (textToolRepeat3 ? 6 : 1);
+            int textToolsRepeatCount = textToolRepeat5 ? 5 : 1;
 
             for (int textToolsIndex = 0; textToolsIndex < textToolsRepeatCount; textToolsIndex++) {
                 if (processSendingText(message, notify, scheduleDate, scheduleRepeatPeriod, payStars)) {
