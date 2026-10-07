@@ -238,7 +238,7 @@ public class ChatActivityEnterView extends FrameLayout implements
     FactorAnimator.Target, Theme.Colorable
 {
     private boolean textToolSplit = false;
-    private boolean textToolRepeat5 = false;
+    private boolean textToolRepeat6 = false;
 
 
 
@@ -2850,7 +2850,7 @@ public class ChatActivityEnterView extends FrameLayout implements
 
                 final CharSequence[] toolItems = new CharSequence[]{
                         (textToolSplit ? "✓ " : "□ ") + "تفكيك تلقائي",
-                        (textToolRepeat5 ? "✓ " : "□ ") + "تدبيل ×5"
+                        (textToolRepeat6 ? "✓ " : "□ ") + "تدبيل ×6"
                 };
 
                 new AlertDialog.Builder(getContext(), resourcesProvider)
@@ -2859,7 +2859,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                                 if (which == 0) {
                                     textToolSplit = !textToolSplit;
                                 } else if (which == 1) {
-                                    textToolRepeat5 = !textToolRepeat5;
+                                    textToolRepeat6 = !textToolRepeat6;
                                 }
                             })
                         .setNegativeButton("إغلاق", null)
@@ -7431,7 +7431,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                 return;
             }
             boolean textToolsSent = false;
-            int textToolsRepeatCount = textToolRepeat5 ? 5 : 1;
+            int textToolsRepeatCount = textToolRepeat6 ? 6 : 1;
 
             for (int textToolsIndex = 0; textToolsIndex < textToolsRepeatCount; textToolsIndex++) {
                 if (processSendingText(message, notify, scheduleDate, scheduleRepeatPeriod, payStars)) {
