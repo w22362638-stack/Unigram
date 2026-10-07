@@ -1264,7 +1264,7 @@ public:
     ) const override {
         webrtc::NetEq::Config updatedConfig = config;
         updatedConfig.sample_rate_hz = 48000;
-        updatedConfig.min_delay_ms = 5;
+        updatedConfig.min_delay_ms = 0;
         updatedConfig.enable_fast_accelerate = true;
         return webrtc::DefaultNetEqFactory().CreateNetEq(updatedConfig, decoder_factory, clock);
     }
