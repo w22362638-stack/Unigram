@@ -310,6 +310,17 @@ class ChannelReceive : public ChannelReceiveInterface,
   // of data, so the stats reporting frequency will be 1Hz (modulo failures).
   constexpr static int kHistogramReportingInterval = 100;
 
+      // Adaptive low-latency NetEq controller.
+      // The controller runs at a coarse interval and posts decisions
+      // to the worker thread instead of changing NetEq on every packet.
+      int adaptive_delay_interval_count_
+          RTC_GUARDED_BY(audio_thread_race_checker_) = 0;
+      int adaptive_max_delay_ms_ RTC_GUARDED_BY(worker_thread_checker_) = 60;
+      int adaptive_stable_intervals_
+          RTC_GUARDED_BY(worker_thread_checker_) = 0;
+
+      constexpr static int kAdaptiveDelayCheckInterval = 20;
+
   mutable Mutex rtcp_counter_mutex_;
   RtcpPacketTypeCounter rtcp_packet_type_counter_
       RTC_GUARDED_BY(rtcp_counter_mutex_);
@@ -492,6 +503,57 @@ AudioMixer::Source::AudioFrameInfo ChannelReceive::GetAudioFrameWithInfo(
   audio_frame->packet_infos_ = RtpPacketInfos(packet_infos);
 
   ++audio_frame_interval_count_;
+  ++adaptive_delay_interval_count_;
+
+  if (adaptive_delay_interval_count_ >= kAdaptiveDelayCheckInterval) {
+    adaptive_delay_interval_count_ = 0;
+    worker_thread_->PostTask(SafeTask(worker_safety_.flag(), [this]() {
+      RTC_DCHECK_RUN_ON(&worker_thread_checker_);
+
+      const int target_delay_ms = acm_receiver_.TargetDelayMs();
+      const int current_delay_ms = acm_receiver_.FilteredCurrentDelayMs();
+
+      NetworkStatistics network_stats;
+      acm_receiver_.GetNetworkStatistics(&network_stats, false);
+
+      const bool jitter_peak = network_stats.jitterPeaksFound;
+      const bool delay_is_high =
+          current_delay_ms >= adaptive_max_delay_ms_ - 5;
+
+      if (jitter_peak || delay_is_high) {
+        adaptive_stable_intervals_ = 0;
+        adaptive_max_delay_ms_ =
+            std::min(120, adaptive_max_delay_ms_ + 20);
+      } else {
+        ++adaptive_stable_intervals_;
+        if (adaptive_stable_intervals_ >= 5) {
+          adaptive_stable_intervals_ = 0;
+          adaptive_max_delay_ms_ =
+              std::max(40, adaptive_max_delay_ms_ - 10);
+        }
+      }
+
+      if (adaptive_max_delay_ms_ < target_delay_ms) {
+        adaptive_max_delay_ms_ =
+            std::min(120, target_delay_ms);
+      }
+
+      acm_receiver_.SetMaximumDelay(adaptive_max_delay_ms_);
+
+      RTC_HISTOGRAM_COUNTS_1000(
+          "WebRTC.Audio.AdaptiveMaximumDelayMs",
+          adaptive_max_delay_ms_);
+      RTC_HISTOGRAM_COUNTS_1000(
+          "WebRTC.Audio.AdaptiveCurrentDelayMs",
+          current_delay_ms);
+      RTC_HISTOGRAM_COUNTS_1000(
+          "WebRTC.Audio.AdaptiveTargetDelayMs",
+          target_delay_ms);
+      RTC_HISTOGRAM_BOOLEAN(
+          "WebRTC.Audio.AdaptiveJitterPeak",
+          jitter_peak);
+    }));
+  }
   if (audio_frame_interval_count_ >= kHistogramReportingInterval) {
     audio_frame_interval_count_ = 0;
     worker_thread_->PostTask(SafeTask(worker_safety_.flag(), [this]() {
