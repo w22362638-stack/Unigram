@@ -1046,7 +1046,7 @@ private:
     std::function<void(uint32_t, float, bool)> _updateAudioLevel;
 
     const int _segmentDuration = 1000;
-    const int _segmentBufferDuration = 2000;
+    const int _segmentBufferDuration = 1000;
 
     int64_t _nextSegmentTimestamp = -1;
 
