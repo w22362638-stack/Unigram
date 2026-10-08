@@ -833,7 +833,7 @@ public:
                 _audioChannel->SetRtpTransport(rtpTransport);
             });
 
-            const uint8_t opusPTimeMs = 20;
+            const uint8_t opusPTimeMs = 10;
 
             cricket::AudioCodec opusCodec = cricket::CreateAudioCodec(111, "opus", 48000, 2);
             opusCodec.SetParam(cricket::kCodecParamUseInbandFec, 1);
