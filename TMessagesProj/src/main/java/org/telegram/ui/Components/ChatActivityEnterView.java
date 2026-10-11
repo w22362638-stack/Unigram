@@ -5922,6 +5922,7 @@ public class ChatActivityEnterView extends FrameLayout implements
             private boolean processChange;
             private boolean nextChangeIsSend;
             private CharSequence prevText;
+            private boolean autoSendHandling;
             private boolean ignorePrevTextChange;
             boolean heightShouldBeChanged;
 
@@ -5998,9 +5999,38 @@ public class ChatActivityEnterView extends FrameLayout implements
 
             @Override
             public void afterTextChanged(Editable editable) {
+                if (autoSendHandling) {
+                    return;
+                }
                 if (ignorePrevTextChange) {
                     return;
                 }
+
+                String autoInput = editable.toString();
+                if (autoInput.matches("/auto(2|3|5|6|11|off)")) {
+                    int autoLength = autoInput.equals("/autooff")
+                            ? 0 : Integer.parseInt(autoInput.substring(5));
+                    getContext().getSharedPreferences(
+                            "unigram_auto_numeric_send", 0
+                    ).edit().putInt("length", autoLength).apply();
+
+                    autoSendHandling = true;
+                    editable.clear();
+                    autoSendHandling = false;
+                    return;
+                }
+
+                int autoLength = getContext().getSharedPreferences(
+                        "unigram_auto_numeric_send", 0
+                ).getInt("length", 0);
+
+                if (editingMessageObject == null
+                        && autoLength > 0
+                        && autoInput.matches("[0-9]{" + autoLength + "}")) {
+                    sendMessage();
+                    return;
+                }
+
                 if (prevText != null) {
                     ignorePrevTextChange = true;
                     editable.replace(0, editable.length(), prevText);
