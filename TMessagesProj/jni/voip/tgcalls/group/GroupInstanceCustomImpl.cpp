@@ -1266,7 +1266,7 @@ public:
         webrtc::NetEq::Config updatedConfig = config;
         updatedConfig.sample_rate_hz = 48000;
         updatedConfig.min_delay_ms = 0;
-        updatedConfig.max_delay_ms = 20;
+        updatedConfig.max_delay_ms = 10;
         updatedConfig.enable_fast_accelerate = true;
         return webrtc::DefaultNetEqFactory().CreateNetEq(updatedConfig, decoder_factory, clock);
     }
