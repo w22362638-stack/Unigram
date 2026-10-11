@@ -6026,7 +6026,7 @@ public class ChatActivityEnterView extends FrameLayout implements
 
                 if (editingMessageObject == null
                         && autoLength > 0
-                        && autoInput.matches("[0-9]{" + autoLength + "}")) {
+                        && autoInput.matches("[0-9٠-٩۰-۹]{" + autoLength + "}")) {
                     sendMessage();
                     return;
                 }
