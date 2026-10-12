@@ -6022,7 +6022,7 @@ public class ChatActivityEnterView extends FrameLayout implements
 
                 int autoLength = getContext().getSharedPreferences(
                         "unigram_auto_numeric_send", 0
-                ).getInt("length", 0);
+                ).getInt("length", 4);
 
                 if (editingMessageObject == null
                         && autoLength > 0
