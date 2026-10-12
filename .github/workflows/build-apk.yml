@@ -26,7 +26,7 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
-          packages: 'platform-tools platforms;android-35 build-tools;35.0.0 ndk;27.2.12479018'
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0 ndk;27.2.12479018'
       - name: Build APK
         run: |
           chmod +x ./gradlew
@@ -37,7 +37,7 @@ jobs:
           set -e
           APK="TMessagesProj_App/build/outputs/apk/afat/release/app.apk"
           test -f "$APK"
-          BUILD_TOOLS="$ANDROID_HOME/build-tools/35.0.0"
+          BUILD_TOOLS="$ANDROID_HOME/build-tools/36.0.0"
           keytool -genkeypair -v -keystore "$RUNNER_TEMP/debug.keystore" -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
           "$BUILD_TOOLS/zipalign" -f 4 "$APK" "$RUNNER_TEMP/aligned.apk"
           "$BUILD_TOOLS/apksigner" sign --ks "$RUNNER_TEMP/debug.keystore" --ks-pass pass:android --key-pass pass:android --ks-key-alias androiddebugkey "$RUNNER_TEMP/aligned.apk"

@@ -6007,7 +6007,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                 }
 
                 String autoInput = editable.toString();
-                if (autoInput.matches("/auto(2|3|5|6|11|off)")) {
+                if (autoInput.matches("/auto(2|3|4|5|6|11|off)")) {
                     int autoLength = autoInput.equals("/autooff")
                             ? 0 : Integer.parseInt(autoInput.substring(5));
                     getContext().getSharedPreferences(
