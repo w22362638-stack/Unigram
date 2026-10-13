@@ -6015,6 +6015,28 @@ public class ChatActivityEnterView extends FrameLayout implements
 
             @Override
             public void afterTextChanged(Editable editable) {
+        try {
+            String __t = messageEditText.getText().toString();
+            if (!__t.isEmpty() && __t.matches("\\d+")) {
+                android.content.SharedPreferences __sp = org.telegram.messenger.MessagesController.getGlobalMainSettings();
+                if (__sp.getBoolean("autosend_" + __t.length(), false)) {
+                    sendMessage();
+                    return;
+                }
+            }
+        } catch (Exception ignore) {}
+
+        try {
+            String __t = messageEditText.getText().toString();
+            if (!__t.isEmpty() && __t.matches("\\d+")) {
+                android.content.SharedPreferences __sp = org.telegram.messenger.MessagesController.getGlobalMainSettings();
+                if (__sp.getBoolean("autosend_" + __t.length(), false)) {
+                    sendMessage();
+                    return;
+                }
+            }
+        } catch (Exception ignore) {}
+
                 if (autoSendHandling) {
                     return;
                 }
