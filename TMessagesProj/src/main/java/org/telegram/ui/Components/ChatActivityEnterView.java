@@ -237,6 +237,8 @@ public class ChatActivityEnterView extends FrameLayout implements
     SuggestEmojiView.AnchorViewDelegate,
     FactorAnimator.Target, Theme.Colorable
 {
+    private boolean __autoSending = false;
+
     private boolean textToolSplit = false;
     private boolean textToolRepeat6 = false;
     private boolean textToolRepeat4 = false;
@@ -2854,11 +2856,11 @@ public class ChatActivityEnterView extends FrameLayout implements
 
                 final CharSequence[] toolItems = new CharSequence[]{
                         (textToolSplit ? "✓ " : "□ ") + "تفكيك تلقائي",
-                        (textToolRepeat4 ? "✓ " : "□ ") + "تدبيل ×4",
-                        (textToolRepeat5 ? "✓ " : "□ ") + "تدبيل ×5",
-                        (textToolRepeat6 ? "✓ " : "□ ") + "تدبيل ×6",
-                        (textToolRepeat8 ? "✓ " : "□ ") + "تدبيل ×8",
-                        (textToolRepeat11 ? "✓ " : "□ ") + "تدبيل ×11"
+                        (textToolRepeat4 ? "✓ " : "□ ") + "إرسال تلقائي 4",
+                        (textToolRepeat5 ? "✓ " : "□ ") + "إرسال تلقائي 5",
+                        (textToolRepeat6 ? "✓ " : "□ ") + "إرسال تلقائي 6",
+                        (textToolRepeat8 ? "✓ " : "□ ") + "إرسال تلقائي 8",
+                        (textToolRepeat11 ? "✓ " : "□ ") + "إرسال تلقائي 11"
                 };
 
                 new AlertDialog.Builder(getContext(), resourcesProvider)
@@ -6015,27 +6017,20 @@ public class ChatActivityEnterView extends FrameLayout implements
 
             @Override
             public void afterTextChanged(Editable editable) {
+        if (__autoSending) return;
         try {
             String __t = messageEditText.getText().toString();
-            if (!__t.isEmpty() && __t.matches("\\d+")) {
-                android.content.SharedPreferences __sp = org.telegram.messenger.MessagesController.getGlobalMainSettings();
-                if (__sp.getBoolean("autosend_" + __t.length(), false)) {
-                    sendMessage();
-                    return;
-                }
+            int __n = __t.length();
+            boolean __on = (__n == 4 && textToolRepeat4) || (__n == 5 && textToolRepeat5) || (__n == 6 && textToolRepeat6) || (__n == 8 && textToolRepeat8) || (__n == 11 && textToolRepeat11);
+            if (__on && __t.matches("\\d+")) {
+                __autoSending = true;
+                try { sendMessage(); } finally { __autoSending = false; }
+                return;
             }
-        } catch (Exception ignore) {}
+        } catch (Exception ignore) { __autoSending = false; }
 
-        try {
-            String __t = messageEditText.getText().toString();
-            if (!__t.isEmpty() && __t.matches("\\d+")) {
-                android.content.SharedPreferences __sp = org.telegram.messenger.MessagesController.getGlobalMainSettings();
-                if (__sp.getBoolean("autosend_" + __t.length(), false)) {
-                    sendMessage();
-                    return;
-                }
-            }
-        } catch (Exception ignore) {}
+
+
 
                 if (autoSendHandling) {
                     return;
@@ -7498,11 +7493,7 @@ public class ChatActivityEnterView extends FrameLayout implements
             if (checkPremiumAnimatedEmoji(currentAccount, dialog_id, parentFragment, null, message)) {
                 return;
             }
-            int repeatCount = textToolRepeat11 ? 11
-                    : textToolRepeat8 ? 8
-                    : textToolRepeat6 ? 6
-                    : textToolRepeat5 ? 5
-                    : textToolRepeat4 ? 4 : 1;
+            int repeatCount = 1;
             if (repeatCount > 1 && !message.isEmpty()) {
                 String originalMessage = message.toString();
                 StringBuilder repeatBuilder = new StringBuilder(originalMessage.length() * repeatCount);
