@@ -273,13 +273,7 @@ public:
         int64_t absoluteTimestamp = rtc::TimeMillis();
 
         while (true) {
-            if (_waitForBufferredMillisecondsBeforeRendering) {
-                if (getAvailableBufferDuration() < _waitForBufferredMillisecondsBeforeRendering.value()) {
-                    break;
-                } else {
-                    _waitForBufferredMillisecondsBeforeRendering = absl::nullopt;
-                }
-            }
+            _waitForBufferredMillisecondsBeforeRendering = absl::nullopt;
 
             if (_availableSegments.empty()) {
                 _playbackReferenceTimestamp = 0;

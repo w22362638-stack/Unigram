@@ -3178,7 +3178,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             phoneInputData.phoneNumber = "+" + codeField.getText() + " " + phoneField.getText();
             phoneInputData.country = currentCountry;
             phoneInputData.patterns = phoneFormatMap.get(codeField.getText().toString());
+            final long loginRequestStartMs = android.os.SystemClock.elapsedRealtime();
+            FileLog.d("LOGIN_TIMING request_started");
             int reqId = ConnectionsManager.getInstance(currentAccount).sendRequest(req, (response, error) -> AndroidUtilities.runOnUIThread(() -> {
+                FileLog.d("LOGIN_TIMING server_response_ms=" + (android.os.SystemClock.elapsedRealtime() - loginRequestStartMs));
                 nextPressed = false;
                 FileLog.d("LOGIN_SEND_CODE_RESPONSE response=" + response + " error=" + (error != null ? error.text : "null")); AndroidUtilities.runOnUIThread(() -> Toast.makeText(getParentActivity(), "RESPONSE: " + (error != null ? error.text : "OK"), Toast.LENGTH_LONG).show());
                 if (error == null) {

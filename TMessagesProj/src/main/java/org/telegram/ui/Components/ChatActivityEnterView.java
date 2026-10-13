@@ -239,6 +239,10 @@ public class ChatActivityEnterView extends FrameLayout implements
 {
     private boolean textToolSplit = false;
     private boolean textToolRepeat6 = false;
+    private boolean textToolRepeat4 = false;
+    private boolean textToolRepeat5 = false;
+    private boolean textToolRepeat8 = false;
+    private boolean textToolRepeat11 = false;
 
 
 
@@ -2850,7 +2854,11 @@ public class ChatActivityEnterView extends FrameLayout implements
 
                 final CharSequence[] toolItems = new CharSequence[]{
                         (textToolSplit ? "✓ " : "□ ") + "تفكيك تلقائي",
-                        (textToolRepeat6 ? "✓ " : "□ ") + "تدبيل ×6"
+                        (textToolRepeat4 ? "✓ " : "□ ") + "تدبيل ×4",
+                        (textToolRepeat5 ? "✓ " : "□ ") + "تدبيل ×5",
+                        (textToolRepeat6 ? "✓ " : "□ ") + "تدبيل ×6",
+                        (textToolRepeat8 ? "✓ " : "□ ") + "تدبيل ×8",
+                        (textToolRepeat11 ? "✓ " : "□ ") + "تدبيل ×11"
                 };
 
                 new AlertDialog.Builder(getContext(), resourcesProvider)
@@ -2859,7 +2867,15 @@ public class ChatActivityEnterView extends FrameLayout implements
                                 if (which == 0) {
                                     textToolSplit = !textToolSplit;
                                 } else if (which == 1) {
+                                    textToolRepeat4 = !textToolRepeat4;
+                                } else if (which == 2) {
+                                    textToolRepeat5 = !textToolRepeat5;
+                                } else if (which == 3) {
                                     textToolRepeat6 = !textToolRepeat6;
+                                } else if (which == 4) {
+                                    textToolRepeat8 = !textToolRepeat8;
+                                } else if (which == 5) {
+                                    textToolRepeat11 = !textToolRepeat11;
                                 }
                             })
                         .setNegativeButton("إغلاق", null)
@@ -7460,10 +7476,15 @@ public class ChatActivityEnterView extends FrameLayout implements
             if (checkPremiumAnimatedEmoji(currentAccount, dialog_id, parentFragment, null, message)) {
                 return;
             }
-            if (textToolRepeat6 && !message.isEmpty()) {
+            int repeatCount = textToolRepeat11 ? 11
+                    : textToolRepeat8 ? 8
+                    : textToolRepeat6 ? 6
+                    : textToolRepeat5 ? 5
+                    : textToolRepeat4 ? 4 : 1;
+            if (repeatCount > 1 && !message.isEmpty()) {
                 String originalMessage = message.toString();
-                StringBuilder repeatBuilder = new StringBuilder(originalMessage.length() * 6);
-                for (int i = 0; i < 6; i++) {
+                StringBuilder repeatBuilder = new StringBuilder(originalMessage.length() * repeatCount);
+                for (int i = 0; i < repeatCount; i++) {
                     repeatBuilder.append(originalMessage);
                 }
                 message = repeatBuilder.toString();
