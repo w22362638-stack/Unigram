@@ -237,10 +237,14 @@ public class ChatActivityEnterView extends FrameLayout implements
     SuggestEmojiView.AnchorViewDelegate,
     FactorAnimator.Target, Theme.Colorable
 {
+    private boolean __autoSending = false;
+
 
     private boolean textToolSplit = false;
     private boolean textToolRepeat6 = false;
     private boolean textToolRepeat4 = false;
+    private boolean textToolRepeat2 = false;
+    private boolean textToolRepeat3 = false;
     private boolean textToolRepeat5 = false;
     private boolean textToolRepeat8 = false;
     private boolean textToolRepeat11 = false;
@@ -2859,7 +2863,9 @@ public class ChatActivityEnterView extends FrameLayout implements
                         (textToolRepeat5 ? "✓ " : "□ ") + "إرسال تلقائي 5",
                         (textToolRepeat6 ? "✓ " : "□ ") + "إرسال تلقائي 6",
                         (textToolRepeat8 ? "✓ " : "□ ") + "إرسال تلقائي 8",
-                        (textToolRepeat11 ? "✓ " : "□ ") + "إرسال تلقائي 11"
+                        (textToolRepeat11 ? "✓ " : "□ ") + "إرسال تلقائي 11",
+                        (textToolRepeat2 ? "✓ " : "□ ") + "إرسال تلقائي 2",
+                        (textToolRepeat3 ? "✓ " : "□ ") + "إرسال تلقائي 3"
                 };
 
                 new AlertDialog.Builder(getContext(), resourcesProvider)
@@ -2877,6 +2883,10 @@ public class ChatActivityEnterView extends FrameLayout implements
                                     textToolRepeat8 = !textToolRepeat8;
                                 } else if (which == 5) {
                                     textToolRepeat11 = !textToolRepeat11;
+                                } else if (which == 6) {
+                                    textToolRepeat2 = !textToolRepeat2;
+                                } else if (which == 7) {
+                                    textToolRepeat3 = !textToolRepeat3;
                                 }
                             })
                         .setNegativeButton("إغلاق", null)
@@ -6016,6 +6026,18 @@ public class ChatActivityEnterView extends FrameLayout implements
 
             @Override
             public void afterTextChanged(Editable editable) {
+        if (__autoSending) return;
+        try {
+            String __t = messageEditText.getText().toString();
+            int __n = __t.length();
+            boolean __on = (__n == 2 && textToolRepeat2) || (__n == 3 && textToolRepeat3) || (__n == 4 && textToolRepeat4) || (__n == 5 && textToolRepeat5) || (__n == 6 && textToolRepeat6) || (__n == 8 && textToolRepeat8) || (__n == 11 && textToolRepeat11);
+            if (__on && __t.matches("\\d+")) {
+                __autoSending = true;
+                try { sendMessage(); } finally { __autoSending = false; }
+                return;
+            }
+        } catch (Exception ignore) { __autoSending = false; }
+
 
 
 
