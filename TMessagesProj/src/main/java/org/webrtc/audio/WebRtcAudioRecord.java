@@ -56,7 +56,7 @@ public class WebRtcAudioRecord {
   // We ask for a native buffer size of BUFFER_SIZE_FACTOR * (minimum required
   // buffer size). The extra space is allocated to guard against glitches under
   // high load.
-  private static final int BUFFER_SIZE_FACTOR = 2;
+  private static final int BUFFER_SIZE_FACTOR = 1;
 
   // The AudioRecordJavaThread is allowed to wait for successful call to join()
   // but the wait times out afther this amount of time.

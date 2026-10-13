@@ -362,6 +362,7 @@ _enableHighBitrateVideo(enableHighBitrateVideo) {
         audioOptions.echo_cancellation = true;
         audioOptions.noise_suppression = true;
         audioOptions.audio_jitter_buffer_fast_accelerate = true;
+        audioOptions.audio_jitter_buffer_min_delay_ms = 0;
 
         std::vector<std::string> streamIds;
         streamIds.push_back("1");
@@ -443,6 +444,7 @@ webrtc::scoped_refptr<webrtc::AudioDeviceModule> MediaManager::createAudioDevice
             return result;
         }
 	}
+    if (const auto __osl = check(create(webrtc::AudioDeviceModule::kAndroidOpenSLESAudio))) { return __osl; }
     return check(create(webrtc::AudioDeviceModule::kPlatformDefaultAudio));
 }
 
