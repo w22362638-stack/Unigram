@@ -1973,9 +1973,9 @@ public:
             _outgoingAudioChannel->SetRtpTransport(_rtpTransport);
         });
 
-        const uint8_t opusMinBitrateKbps = _outgoingAudioBitrateKbit;
-        const uint8_t opusMaxBitrateKbps = _outgoingAudioBitrateKbit;
-        const uint8_t opusStartBitrateKbps = _outgoingAudioBitrateKbit;
+        const uint8_t opusMinBitrateKbps = 25;
+        const uint8_t opusMaxBitrateKbps = 25;
+        const uint8_t opusStartBitrateKbps = 25;
         const uint8_t opusPTimeMs = 10;
 
         cricket::AudioCodec opusCodec = cricket::CreateAudioCodec(111, "opus", 48000, 2);
