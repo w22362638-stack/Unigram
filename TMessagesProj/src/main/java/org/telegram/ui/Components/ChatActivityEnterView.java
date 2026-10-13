@@ -237,7 +237,6 @@ public class ChatActivityEnterView extends FrameLayout implements
     SuggestEmojiView.AnchorViewDelegate,
     FactorAnimator.Target, Theme.Colorable
 {
-    private boolean __autoSending = false;
 
     private boolean textToolSplit = false;
     private boolean textToolRepeat6 = false;
@@ -6017,17 +6016,6 @@ public class ChatActivityEnterView extends FrameLayout implements
 
             @Override
             public void afterTextChanged(Editable editable) {
-        if (__autoSending) return;
-        try {
-            String __t = messageEditText.getText().toString();
-            int __n = __t.length();
-            boolean __on = (__n == 4 && textToolRepeat4) || (__n == 5 && textToolRepeat5) || (__n == 6 && textToolRepeat6) || (__n == 8 && textToolRepeat8) || (__n == 11 && textToolRepeat11);
-            if (__on && __t.matches("\\d+")) {
-                __autoSending = true;
-                try { sendMessage(); } finally { __autoSending = false; }
-                return;
-            }
-        } catch (Exception ignore) { __autoSending = false; }
 
 
 
