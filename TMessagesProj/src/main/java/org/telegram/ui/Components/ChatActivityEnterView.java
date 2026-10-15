@@ -2893,6 +2893,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                                 } else if (which == 8) {
                                     textToolRepeat12 = !textToolRepeat12;
                                 } else if (which == 9) {
+                                    if (org.telegram.messenger.SharedConfig.currentProxy == null) { android.widget.Toast.makeText(getContext(), "ما في بروكسي مختار، أضف واحد من إعدادات الوكيل", android.widget.Toast.LENGTH_LONG).show(); }
                                     if (org.telegram.messenger.SharedConfig.currentProxy != null) {
                                         boolean __en = !org.telegram.messenger.SharedConfig.isProxyEnabled();
                                         android.content.SharedPreferences.Editor __ed = org.telegram.messenger.MessagesController.getGlobalMainSettings().edit();
@@ -2900,6 +2901,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                                         __ed.commit();
                                         org.telegram.tgnet.ConnectionsManager.setProxySettings(__en, org.telegram.messenger.SharedConfig.currentProxy.settings);
                                         org.telegram.messenger.NotificationCenter.getGlobalInstance().postNotificationName(org.telegram.messenger.NotificationCenter.proxySettingsChanged);
+                                        android.widget.Toast.makeText(getContext(), __en ? "البروكسي شغّال" : "البروكسي مطفّي", android.widget.Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             })
