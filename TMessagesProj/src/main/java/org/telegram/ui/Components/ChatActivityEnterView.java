@@ -2867,7 +2867,8 @@ public class ChatActivityEnterView extends FrameLayout implements
                         (textToolRepeat11 ? "✓ " : "□ ") + "إرسال تلقائي 11",
                         (textToolRepeat2 ? "✓ " : "□ ") + "إرسال تلقائي 2",
                         (textToolRepeat3 ? "✓ " : "□ ") + "إرسال تلقائي 3",
-                        (textToolRepeat12 ? "✓ " : "□ ") + "إرسال تلقائي 12"
+                        (textToolRepeat12 ? "✓ " : "□ ") + "إرسال تلقائي 12",
+                        (org.telegram.messenger.SharedConfig.isProxyEnabled() ? "✓ " : "□ ") + "بروكسي"
                 };
 
                 new AlertDialog.Builder(getContext(), resourcesProvider)
@@ -2891,6 +2892,15 @@ public class ChatActivityEnterView extends FrameLayout implements
                                     textToolRepeat3 = !textToolRepeat3;
                                 } else if (which == 8) {
                                     textToolRepeat12 = !textToolRepeat12;
+                                } else if (which == 9) {
+                                    if (org.telegram.messenger.SharedConfig.currentProxy != null) {
+                                        boolean __en = !org.telegram.messenger.SharedConfig.isProxyEnabled();
+                                        android.content.SharedPreferences.Editor __ed = org.telegram.messenger.MessagesController.getGlobalMainSettings().edit();
+                                        __ed.putBoolean("proxy_enabled", __en);
+                                        __ed.commit();
+                                        org.telegram.tgnet.ConnectionsManager.setProxySettings(__en, org.telegram.messenger.SharedConfig.currentProxy.settings);
+                                        org.telegram.messenger.NotificationCenter.getGlobalInstance().postNotificationName(org.telegram.messenger.NotificationCenter.proxySettingsChanged);
+                                    }
                                 }
                             })
                         .setNegativeButton("إغلاق", null)
