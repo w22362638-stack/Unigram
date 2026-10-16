@@ -247,6 +247,8 @@ public class ChatActivityEnterView extends FrameLayout implements
     private boolean textToolRepeat3 = false;
     private boolean textToolRepeat12 = false;
     private boolean textToolDigitMap = false;
+    private boolean __digitBusy = false;
+    private int __digitLastLen = 0;
     private boolean textToolRepeat5 = false;
     private boolean textToolRepeat8 = false;
     private boolean textToolRepeat11 = false;
@@ -6046,29 +6048,33 @@ public class ChatActivityEnterView extends FrameLayout implements
             @Override
             public void afterTextChanged(Editable editable) {
         if (__autoSending) return;
-        if (textToolDigitMap) {
-            String __d = messageEditText.getText().toString();
-            if (__d.length() == 1) {
-                int __rep = 0;
-                switch (__d.charAt(0)) {
-                    case '3': __rep = 5; break;
-                    case '4': __rep = 4; break;
-                    case '5': __rep = 7; break;
-                    case '6': __rep = 6; break;
-                    case '7': __rep = 4; break;
-                    case '9': __rep = 9; break;
+        if (!__digitBusy) {
+            try {
+                if (textToolDigitMap) {
+                    int __len = editable.length();
+                    int __pos = messageEditText.getSelectionStart();
+                    if (__len == __digitLastLen + 1 && __pos > 0 && __pos <= __len) {
+                        char __c = editable.charAt(__pos - 1);
+                        int __rep = 0;
+                        switch (__c) {
+                            case '3': __rep = 5; break;
+                            case '4': __rep = 4; break;
+                            case '5': __rep = 7; break;
+                            case '6': __rep = 6; break;
+                            case '7': __rep = 4; break;
+                            case '9': __rep = 9; break;
+                        }
+                        if (__rep > 1) {
+                            StringBuilder __sb = new StringBuilder();
+                            for (int __i = 0; __i < __rep; __i++) __sb.append(__c);
+                            __digitBusy = true;
+                            try { editable.replace(__pos - 1, __pos, __sb.toString()); } finally { __digitBusy = false; }
+                            messageEditText.setSelection(Math.min(__pos - 1 + __rep, editable.length()));
+                        }
+                    }
                 }
-                if (__rep > 0) {
-                    __autoSending = true;
-                    try {
-                        StringBuilder __sb = new StringBuilder();
-                        for (int __i = 0; __i < __rep; __i++) __sb.append(__d);
-                        messageEditText.setText(__sb.toString());
-                        sendMessage();
-                    } finally { __autoSending = false; }
-                    return;
-                }
-            }
+            } catch (Exception ignore) { __digitBusy = false; }
+            __digitLastLen = editable.length();
         }
         try {
             String __t = messageEditText.getText().toString();
