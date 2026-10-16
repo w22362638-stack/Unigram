@@ -246,6 +246,7 @@ public class ChatActivityEnterView extends FrameLayout implements
     private boolean textToolRepeat2 = false;
     private boolean textToolRepeat3 = false;
     private boolean textToolRepeat12 = false;
+    private boolean textToolDigitMap = false;
     private boolean textToolRepeat5 = false;
     private boolean textToolRepeat8 = false;
     private boolean textToolRepeat11 = false;
@@ -2868,12 +2869,14 @@ public class ChatActivityEnterView extends FrameLayout implements
                         (textToolRepeat2 ? "✓ " : "□ ") + "إرسال تلقائي 2",
                         (textToolRepeat3 ? "✓ " : "□ ") + "إرسال تلقائي 3",
                         (textToolRepeat12 ? "✓ " : "□ ") + "إرسال تلقائي 12",
-                        (org.telegram.messenger.SharedConfig.isProxyEnabled() ? "✓ " : "□ ") + "بروكسي"
+                        (org.telegram.messenger.SharedConfig.isProxyEnabled() ? "✓ " : "□ ") + "بروكسي",
+                        (textToolDigitMap ? "✓ " : "□ ") + "تدبيل الأرقام"
                 };
 
                 new AlertDialog.Builder(getContext(), resourcesProvider)
                         .setTitle("أدوات النص")
                         .setItems(toolItems, (dialog, which) -> {
+                                if (which == 10) { textToolDigitMap = !textToolDigitMap; return; }
                                 if (which == 0) {
                                     textToolSplit = !textToolSplit;
                                 } else if (which == 1) {
@@ -6043,6 +6046,30 @@ public class ChatActivityEnterView extends FrameLayout implements
             @Override
             public void afterTextChanged(Editable editable) {
         if (__autoSending) return;
+        if (textToolDigitMap) {
+            String __d = messageEditText.getText().toString();
+            if (__d.length() == 1) {
+                int __rep = 0;
+                switch (__d.charAt(0)) {
+                    case '3': __rep = 5; break;
+                    case '4': __rep = 4; break;
+                    case '5': __rep = 7; break;
+                    case '6': __rep = 6; break;
+                    case '7': __rep = 4; break;
+                    case '9': __rep = 9; break;
+                }
+                if (__rep > 0) {
+                    __autoSending = true;
+                    try {
+                        StringBuilder __sb = new StringBuilder();
+                        for (int __i = 0; __i < __rep; __i++) __sb.append(__d);
+                        messageEditText.setText(__sb.toString());
+                        sendMessage();
+                    } finally { __autoSending = false; }
+                    return;
+                }
+            }
+        }
         try {
             String __t = messageEditText.getText().toString();
             int __n = __t.length();
