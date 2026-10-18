@@ -444,6 +444,7 @@ webrtc::scoped_refptr<webrtc::AudioDeviceModule> MediaManager::createAudioDevice
             return result;
         }
 	}
+    if (const auto __aa = check(create(webrtc::AudioDeviceModule::kAndroidAAudioAudio))) { return __aa; }
     if (const auto __osl = check(create(webrtc::AudioDeviceModule::kAndroidOpenSLESAudio))) { return __osl; }
     return check(create(webrtc::AudioDeviceModule::kPlatformDefaultAudio));
 }

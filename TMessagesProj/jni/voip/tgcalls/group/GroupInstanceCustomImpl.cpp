@@ -3651,7 +3651,8 @@ private:
             options.num_channels = 1;
             return check(FakeAudioDeviceModule::Creator(nullptr, _externalAudioRecorder, options)(&_webrtcEnvironment.task_queue_factory()));
         }
-        if (const auto __osl = check(create(webrtc::AudioDeviceModule::kAndroidOpenSLESAudio))) { return __osl; }
+        if (const auto __aa = check(create(webrtc::AudioDeviceModule::kAndroidAAudioAudio))) { return __aa; }
+    if (const auto __osl = check(create(webrtc::AudioDeviceModule::kAndroidOpenSLESAudio))) { return __osl; }
     return check(create(webrtc::AudioDeviceModule::kPlatformDefaultAudio));
     }
 
