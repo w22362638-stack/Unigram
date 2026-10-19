@@ -37,9 +37,6 @@ absl::optional<std::vector<unsigned char>> GetFormatParameter(
     const SdpAudioFormat& format,
     absl::string_view param);
 
-#include <atomic>
-#include <android/log.h>
-
 class OpusFrame : public AudioDecoder::EncodedAudioFrame {
  public:
   OpusFrame(AudioDecoder* decoder,
@@ -55,10 +52,6 @@ class OpusFrame : public AudioDecoder::EncodedAudioFrame {
       ret = decoder_->PacketDuration(payload_.data(), payload_.size());
     } else {
       ret = decoder_->PacketDurationRedundant(payload_.data(), payload_.size());
-    }
-    static std::atomic<int> __lastDur{-1};
-    if (ret >= 0 && is_primary_payload_ && __lastDur.exchange(ret) != ret) {
-      __android_log_print(ANDROID_LOG_WARN, "AudioPktDur", "opus packet samples=%d ms=%d", ret, ret / 48);
     }
     return (ret < 0) ? 0 : static_cast<size_t>(ret);
   }
