@@ -1592,9 +1592,6 @@ add_library(voipandroid STATIC
         voip/webrtc/modules/audio_device/android/opensles_common.cc
         voip/webrtc/modules/audio_device/android/opensles_player.cc
         voip/webrtc/modules/audio_device/android/opensles_recorder.cc
-        voip/webrtc/modules/audio_device/android/aaudio_player.cc
-        voip/webrtc/modules/audio_device/android/aaudio_recorder.cc
-        voip/webrtc/modules/audio_device/android/aaudio_wrapper.cc
         voip/webrtc/sdk/android/native_api/video/video_source.cc
         voip/webrtc/sdk/android/native_api/video/wrapper.cc
         voip/webrtc/sdk/android/native_api/codecs/wrapper.cc
@@ -1728,11 +1725,3 @@ elseif(${ANDROID_ABI} STREQUAL "x86_64")
     target_compile_definitions(voipandroid PUBLIC
             HAVE_SSE2)
 endif()
-
-set_source_files_properties(
-    voip/webrtc/modules/audio_device/audio_device_impl.cc
-    voip/webrtc/modules/audio_device/android/audio_manager.cc
-    voip/webrtc/modules/audio_device/android/aaudio_player.cc
-    voip/webrtc/modules/audio_device/android/aaudio_recorder.cc
-    voip/webrtc/modules/audio_device/android/aaudio_wrapper.cc
-    PROPERTIES COMPILE_DEFINITIONS WEBRTC_AUDIO_DEVICE_INCLUDE_ANDROID_AAUDIO)
