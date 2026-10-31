@@ -3965,6 +3965,9 @@ public class ChatActivity extends BaseFragment implements
                     if (!getMessagesController().getTranslateController().toggleTranslatingDialog(getDialogId(), true)) {
                         updateTopPanel(true);
                     }
+                } else if (id == 9001) {
+                    AutoReply.enabled = !AutoReply.enabled;
+                    BulletinFactory.of(ChatActivity.this).createSimpleBulletin(R.raw.info, AutoReply.enabled ? "الرد التلقائي: شغّال" : "الرد التلقائي: مطفي").show();
                 } else if (id == call || id == video_call) {
                     if (currentUser != null && getParentActivity() != null) {
                         VoIPHelper.startCall(currentUser, id == video_call, userInfo != null && userInfo.video_calls_available, getParentActivity(), getMessagesController().getUserFull(currentUser.id), getAccountInstance());
@@ -4395,6 +4398,7 @@ public class ChatActivity extends BaseFragment implements
             if (currentUser != null && chatMode != MODE_SAVED) {
                 headerItem.lazilyAddSubItem(call, R.drawable.msg_callback, LocaleController.getString(R.string.Call));
                 headerItem.lazilyAddSubItem(video_call, R.drawable.msg_videocall, LocaleController.getString(R.string.VideoCall));
+                headerItem.lazilyAddSubItem(9001, R.drawable.msg_reply, "رد تلقائي");
                 if (userFull != null && userFull.phone_calls_available) {
                     headerItem.showSubItem(call);
                     if (userFull.video_calls_available) {
@@ -21982,6 +21986,17 @@ public class ChatActivity extends BaseFragment implements
                     return;
                 }
                 processNewMessages(arr);
+                if (AutoReply.enabled) {
+                    for (int i = 0; i < arr.size(); i++) {
+                        MessageObject mo = arr.get(i);
+                        if (mo != null && mo.messageOwner != null && !mo.isOut()) {
+                            String r = AutoReply.extract(mo.messageOwner.message);
+                            if (r != null) {
+                                getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(r, dialog_id, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                            }
+                        }
+                    }
+                }
             } else if (ChatObject.isChannel(currentChat) && !currentChat.megagroup && chatInfo != null && did == -chatInfo.linked_chat_id) {
                 for (int a = 0, N = arr.size(); a < N; a++) {
                     MessageObject messageObject = arr.get(a);
