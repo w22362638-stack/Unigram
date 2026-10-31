@@ -4398,7 +4398,7 @@ public class ChatActivity extends BaseFragment implements
             if (currentUser != null && chatMode != MODE_SAVED) {
                 headerItem.lazilyAddSubItem(call, R.drawable.msg_callback, LocaleController.getString(R.string.Call));
                 headerItem.lazilyAddSubItem(video_call, R.drawable.msg_videocall, LocaleController.getString(R.string.VideoCall));
-                headerItem.lazilyAddSubItem(9001, R.drawable.msg_reply, "رد تلقائي");
+                headerItem.lazilyAddSubItem(9001, R.drawable.msg_forward, "رد تلقائي");
                 if (userFull != null && userFull.phone_calls_available) {
                     headerItem.showSubItem(call);
                     if (userFull.video_calls_available) {
